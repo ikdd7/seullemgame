@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #e9eef3;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 모바일 세로 화면 프레임 가운데 정렬 */
+#root {
+  display: flex;
+  justify-content: center;
+}
