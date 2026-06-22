@@ -62,13 +62,53 @@ OnLoadPDF(*) {
          . "▶ 부서     : " d["dept"] "`n"
          . "▶ DB매칭   : " d["matched"] "`n"
          . "───────────────────────────`n"
-         . "이 내용으로 빈 행에 입력할까요?"
+         . "새 파일명 : " MakeFileName(d) "`n"
+         . "───────────────────────────`n"
+         . "이 내용으로 빈 행에 입력하고, 파일명도 변경할까요?"
     if (MsgBox(msg, "문서 추출 결과 확인", 4 + 32) = "No") {
         SetStatus("취소됨")
         return
     }
     FillRow(d)
+    RenamePDF(pdf, d)
 }
+
+; ── 문서종류+대상물명으로 표준 파일명 만들기 ────────────────
+MakeFileName(d) {
+    static DOC_NAME := Map("이행완료보고서", "이행완료 보고서",
+                           "이행계획서",     "이행계획서",
+                           "결과보고서",     "자체점검 결과보고서",
+                           "미상",           "문서")
+    docName := DOC_NAME.Has(d["doc_type"]) ? DOC_NAME[d["doc_type"]] : d["doc_type"]
+    base := (d["building"] != "") ? docName "(" d["building"] ")" : docName
+    return CleanFileName(base) ".pdf"
+}
+
+; ── 파일명 자동변경 (덮어쓰기 방지, 중복 시 (2)…) ───────────
+RenamePDF(pdf, d) {
+    SplitPath(pdf, &oldName, &dir)
+    newName := MakeFileName(d)
+    if (newName = oldName)
+        return
+    target := dir "\" newName
+    if FileExist(target) {                 ; 동명 존재 → (2),(3)… 붙임
+        SplitPath(newName, , , , &stem)
+        n := 2
+        while FileExist(dir "\" stem "(" n ").pdf")
+            n++
+        target := dir "\" stem "(" n ").pdf"
+    }
+    try {
+        FileMove(pdf, target)
+        SplitPath(target, &tn)
+        SetStatus("📄 파일명 변경: " tn)
+    } catch as e {
+        MsgBox("파일명 변경 실패(파일이 열려있을 수 있음):`n" e.Message, "알림", 48)
+    }
+}
+
+; 파일명에 못 쓰는 문자 제거
+CleanFileName(s) => RegExReplace(s, '[\\/:*?"<>|]', "")
 
 ; ── 폴더에서 가장 최근 PDF 찾기 ─────────────────────────────
 NewestPDF(folder, &mtime) {
