@@ -149,14 +149,16 @@ DetectDocType(full) {
 }
 
 DetectName(full) {
-    if RegExMatch(full, "성\s*명[:：\s]*([가-힣](?:\s*[가-힣]){1,2})", &m) {
-        n := NoSpace(m[1])
-        if (StrLen(n) = 3 && InStr("전성번호명관방소", SubStr(n, 3, 1)))
-            n := SubStr(n, 1, 2)         ; 뒷 단어 1글자 번짐 제거
-        return n
-    }
-    if RegExMatch(full, "관계인[^가-힣]{0,6}([가-힣]{2,3})", &m2)
-        return m2[1]
+    ; 성명 뒤 ~ '전화' 직전까지를 이름으로 (2~4음절). '전화'가 경계라 호/성 등으로
+    ; 끝나는 정상 이름도 안 잘림. (예: 이재호, 김민성)
+    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣](?:\s*[가-힣]){1,3}?)\s*(?=전\s*화|[,，)\]\r\n]|$)", &m)
+        return NoSpace(m[1])
+    ; 보조 1: 성명 뒤 2~3음절
+    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣]\s*[가-힣]\s*[가-힣]?)", &m2)
+        return NoSpace(m2[1])
+    ; 보조 2: 관계인 근처 2~3음절
+    if RegExMatch(full, "관계인[^가-힣]{0,6}([가-힣]{2,3})", &m3)
+        return m3[1]
     return ""
 }
 
