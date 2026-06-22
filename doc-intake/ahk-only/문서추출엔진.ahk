@@ -131,12 +131,13 @@ IsLabelWord(t) {
 ; ── 정규식 필드 ─────────────────────────────────────────────
 DetectDocType(full) {
     f := NoSpace(SubStr(full, 1, 300))
-    if InStr(f, "이행완료")
+    if InStr(f, "이행완료")                      ; 이행 먼저 판별
         return "이행완료보고서"
-    if (InStr(f, "실시결과") || InStr(f, "결과보고서"))
-        return "결과보고서"
     if InStr(f, "이행계획")
         return "이행계획서"
+    ; 이행 문서가 아니면서 자체점검/실시결과 → 실시결과(자체점검) 보고서
+    if (InStr(f, "실시결과") || InStr(f, "결과보고서") || InStr(f, "자체점검"))
+        return "결과보고서"
     return "미상"
 }
 
@@ -188,7 +189,7 @@ LoadDB(dbPath) {
         line := A_LoopField
         if (line = "" || i = 1)            ; 헤더 스킵
             continue
-        c := StrSplit(line, ",")
+        c := ParseCSVLine(line)            ; 쉼표 포함 이름(따옴표) 처리
         nm := (c.Length >= 1) ? Trim(c[1]) : ""
         if (nm = "")
             continue
@@ -197,6 +198,32 @@ LoadDB(dbPath) {
                  dept: (c.Length >= 3 ? Trim(c[3]) : "")})
     }
     return db
+}
+
+; ── CSV 한 줄 파싱 (따옴표로 감싼 쉼표 포함 필드 지원) ───────
+ParseCSVLine(line) {
+    fields := [], cur := "", inQ := false
+    i := 1, n := StrLen(line)
+    while (i <= n) {
+        ch := SubStr(line, i, 1)
+        if (inQ) {
+            if (ch = '"') {
+                if (SubStr(line, i + 1, 1) = '"') {   ; "" → 따옴표 1개
+                    cur .= '"', i += 2
+                    continue
+                }
+                inQ := false, i++
+            } else
+                cur .= ch, i++
+        } else if (ch = '"')
+            inQ := true, i++
+        else if (ch = ",")
+            fields.Push(cur), cur := "", i++
+        else
+            cur .= ch, i++
+    }
+    fields.Push(cur)
+    return fields
 }
 
 ; ── OCR 전체 글자에서 DB 이름과 가장 잘 맞는 항목 찾기 ──────

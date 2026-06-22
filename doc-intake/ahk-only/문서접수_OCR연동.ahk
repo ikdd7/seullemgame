@@ -51,26 +51,51 @@ OnLoadPDF(*) {
         return
     }
 
-    msg := "📄 최신 스캔: " fname "`n"
-         . "    (저장시각 " FormatTime(mtime, "MM/dd HH:mm") ")`n"
-         . "───────────────────────────`n"
-         . "▶ 문서종류 : " d["doc_type"] "`n"
-         . "▶ 대상물명 : " d["building"] "`n"
-         . "▶ 주소     : " d["addr"] "`n"
-         . "▶ 관계인   : " d["name"] "   (" d["phone"] ")`n"
-         . "▶ 점검종류 : " d["status"] "`n"
-         . "▶ 부서     : " d["dept"] "`n"
-         . "▶ DB매칭   : " d["matched"] "`n"
-         . "───────────────────────────`n"
-         . "새 파일명 : " MakeFileName(d) "`n"
-         . "───────────────────────────`n"
-         . "이 내용으로 빈 행에 입력하고, 파일명도 변경할까요?"
-    if (MsgBox(msg, "문서 추출 결과 확인", 4 + 32) = "No") {
-        SetStatus("취소됨")
-        return
+    head := "📄 최신 스캔: " fname "   (" FormatTime(mtime, "MM/dd HH:mm") ")`n"
+          . "───────────────────────────`n"
+          . "▶ 문서종류 : " d["doc_type"] "`n"
+          . "▶ 대상물명 : " d["building"] "`n"
+
+    dt := d["doc_type"]
+    if (dt = "결과보고서") {
+        ; ── 자체점검(실시결과) 보고서 → GUI 자동입력 ──
+        msg := head
+             . "▶ 주소     : " d["addr"] "`n"
+             . "▶ 관계인   : " d["name"] "   (" d["phone"] ")`n"
+             . "▶ 점검종류 : " d["status"] "`n"
+             . "▶ 부서     : " d["dept"] "`n"
+             . "▶ DB매칭   : " d["matched"] "`n"
+             . "───────────────────────────`n"
+             . "이 내용으로 빈 행에 입력할까요?"
+        if (MsgBox(msg, "자체점검 보고서 → 접수 입력", 4 + 32) = "Yes")
+            FillRow(d)
+        else
+            SetStatus("취소됨")
+    } else if (dt = "이행계획서" || dt = "이행완료보고서") {
+        ; ── 이행계획서 / 이행완료 보고서 → 파일명만 변경 ──
+        msg := head
+             . "───────────────────────────`n"
+             . "새 파일명 : " MakeFileName(d) "`n"
+             . "───────────────────────────`n"
+             . "이 이름으로 파일명을 변경할까요?"
+        if (MsgBox(msg, dt " → 파일명 변경", 4 + 32) = "Yes")
+            RenamePDF(pdf, d)
+        else
+            SetStatus("취소됨")
+    } else {
+        ; ── 문서종류 미상 → 사용자가 선택 ──
+        msg := head
+             . "───────────────────────────`n"
+             . "문서종류를 자동 판별하지 못했습니다.`n`n"
+             . "[예] = GUI에 입력    [아니오] = 파일명만 변경    [취소] = 중단"
+        res := MsgBox(msg, "문서종류 미상", 3 + 48)
+        if (res = "Yes")
+            FillRow(d)
+        else if (res = "No")
+            RenamePDF(pdf, d)
+        else
+            SetStatus("취소됨")
     }
-    FillRow(d)
-    RenamePDF(pdf, d)
 }
 
 ; ── 문서종류+대상물명으로 표준 파일명 만들기 ────────────────

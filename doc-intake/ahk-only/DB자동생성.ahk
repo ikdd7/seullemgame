@@ -19,7 +19,7 @@ if FileExist(dbPath) {
         i++
         if (i = 1 || A_LoopField = "")
             continue
-        c := StrSplit(A_LoopField, ",")
+        c := ParseCSVLine(A_LoopField)
         nm := (c.Length >= 1) ? Trim(c[1]) : ""
         if (nm != "")
             existing[nm] := { addr: (c.Length >= 2 ? Trim(c[2]) : ""),
@@ -60,11 +60,45 @@ out := "대상물명,주소,부서`n"
 for nm in order {
     a := existing.Has(nm) ? existing[nm].addr : ""
     d := existing.Has(nm) ? existing[nm].dept : ""
-    out .= nm "," a "," d "`n"
+    out .= QuoteCSV(nm) "," QuoteCSV(a) "," QuoteCSV(d) "`n"
 }
 fobj := FileOpen(dbPath, "w", "UTF-8")     ; BOM 포함 → 메모장/엑셀에서 한글 안 깨짐
 fobj.Write(out)
 fobj.Close()
+
+; ── CSV 유틸 ──
+ParseCSVLine(line) {
+    fields := [], cur := "", inQ := false
+    i := 1, n := StrLen(line)
+    while (i <= n) {
+        ch := SubStr(line, i, 1)
+        if (inQ) {
+            if (ch = '"') {
+                if (SubStr(line, i + 1, 1) = '"') {
+                    cur .= '"', i += 2
+                    continue
+                }
+                inQ := false, i++
+            } else
+                cur .= ch, i++
+        } else if (ch = '"')
+            inQ := true, i++
+        else if (ch = ",")
+            fields.Push(cur), cur := "", i++
+        else
+            cur .= ch, i++
+    }
+    fields.Push(cur)
+    return fields
+}
+
+QuoteCSV(s) {
+    if (InStr(s, ",") || InStr(s, '"') || InStr(s, "`n") || InStr(s, "`r")) {
+        s := StrReplace(s, '"', '""')
+        return '"' s '"'
+    }
+    return s
+}
 
 MsgBox("대상물DB.csv 를 만들었습니다.`n`n"
      . "· 등록된 대상물: " order.Length "개`n"
