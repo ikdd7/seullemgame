@@ -62,7 +62,7 @@ for nm in order {
     d := existing.Has(nm) ? existing[nm].dept : ""
     out .= nm "," a "," d "`n"
 }
-fobj := FileOpen(dbPath, "w", "UTF-8-RAW")
+fobj := FileOpen(dbPath, "w", "UTF-8")     ; BOM 포함 → 메모장/엑셀에서 한글 안 깨짐
 fobj.Write(out)
 fobj.Close()
 
