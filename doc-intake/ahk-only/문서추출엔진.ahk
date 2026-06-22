@@ -51,19 +51,31 @@ ExtractFromPDF(pdfPath, dbPath := "") {
     ocrAddr     := CleanSpace(ValueBelow(words, labSoje, ax, 100000000, 2.2))
     ocrDept     := DetectDept(full)
 
-    ; 3) 대상물명 = OCR 전체 글자 ↔ DB 유사도 매칭 (칸 오류에 강함)
+    ; 3) 대상물명 결정
+    ;   ① OCR이 읽은 명칭값(ocrBuilding)이 DB 이름과 가까우면 → 그 DB 이름으로 교정
+    ;      (정상 칸을 읽은 경우의 오타 교정. 약한 매칭이 정답을 덮어쓰지 않음)
+    ;   ② 그게 아니면(칸을 잘못 집었을 수 있음) → 본문 전체 슬라이딩 매칭, 단 높은 임계(0.8)
+    ;   ③ 둘 다 아니면 → OCR이 읽은 명칭값 그대로
     db := LoadDB(dbPath)
-    m  := BestDBMatch(full, db)
-    if (IsObject(m) && m.score >= 0.6) {
-        data["building"] := m.name
-        data["addr"]     := (m.addr != "") ? m.addr : ocrAddr
-        data["dept"]     := (m.dept != "") ? m.dept : ocrDept
-        data["matched"]  := m.name " (유사도 " Round(m.score * 100) "%)"
+    chosen := "", cscore := 0.0
+    fs := BestNameMatch(ocrBuilding, db)
+    if (ocrBuilding != "" && IsObject(fs) && fs.score >= 0.6) {
+        chosen := fs, cscore := fs.score
+    } else {
+        sl := BestDBMatch(full, db)
+        if (IsObject(sl) && sl.score >= 0.8)
+            chosen := sl, cscore := sl.score
+    }
+    if (IsObject(chosen)) {
+        data["building"] := chosen.name
+        data["addr"]     := (chosen.addr != "") ? chosen.addr : ocrAddr
+        data["dept"]     := (chosen.dept != "") ? chosen.dept : ocrDept
+        data["matched"]  := chosen.name " (유사도 " Round(cscore * 100) "%)"
     } else {
         data["building"] := ocrBuilding
         data["addr"]     := ocrAddr
         data["dept"]     := ocrDept
-        data["matched"]  := (db.Length ? "DB 미매칭" : "DB 비어있음")
+        data["matched"]  := (db.Length ? "DB미매칭(OCR값 사용)" : "DB 비어있음")
     }
     return data
 }
@@ -230,6 +242,21 @@ ParseCSVLine(line) {
     }
     fields.Push(cur)
     return fields
+}
+
+; ── OCR 명칭값 ↔ DB 이름 '풀스트링' 유사도 최고 항목 ────────
+BestNameMatch(target, db) {
+    if (target = "" || !db.Length)
+        return ""
+    best := "", bs := 0.0
+    for row in db {
+        s := Similarity(target, row.name)
+        if (s > bs)
+            bs := s, best := row
+    }
+    if IsObject(best)
+        return {name: best.name, addr: best.addr, dept: best.dept, score: bs}
+    return ""
 }
 
 ; ── OCR 전체 글자에서 DB 이름과 가장 잘 맞는 항목 찾기 ──────
