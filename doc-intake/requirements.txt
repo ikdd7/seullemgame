@@ -1,0 +1,5 @@
+# 문서접수 OCR 자동입력 - 파이썬 의존성
+# 설치:  pip install -r requirements.txt
+pymupdf      # PDF 텍스트/이미지 처리 (import fitz)
+easyocr      # 한국어 OCR (스캔 문서용, 오프라인 무료)
+# difflib, csv, argparse 등은 파이썬 표준 라이브러리라 별도 설치 불필요
