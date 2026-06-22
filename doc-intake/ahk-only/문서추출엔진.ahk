@@ -54,6 +54,15 @@ ExtractFromPDF(pdfPath, dbPath := "") {
     data["dept"]     := DetectDept(full)
     data["source"]   := "ocr"
 
+    ; ★ 파일명 규칙: "…(대상물명).pdf" → 괄호 안을 대상물명으로 우선 사용
+    ;   (스캔 파일을 이렇게 저장하므로 OCR보다 정확함)
+    SplitPath(pdfPath, , , , &nameNoExt)
+    data["building_src"] := "ocr"
+    if RegExMatch(nameNoExt, "\(([^()]+)\)[^()]*$", &fm) {
+        data["building"] := Trim(fm[1])
+        data["building_src"] := "file"        ; 파일명 = 신뢰 → DB가 이름을 덮어쓰지 않음
+    }
+
     ; 4) 대상물 DB 보정
     CorrectWithDB(data, dbPath)
     return data
@@ -199,7 +208,9 @@ CorrectWithDB(data, dbPath) {
             bestScore := s, best := nm, bestCols := cols
     }
     if (best != "" && bestScore >= 0.5) {
-        data["building"] := best
+        ; 파일명에서 얻은 이름은 신뢰 → 덮어쓰지 않음. OCR 이름일 때만 교정.
+        if (data.Has("building_src") && data["building_src"] = "ocr")
+            data["building"] := best
         if (IsObject(bestCols) && bestCols.Length >= 2 && Trim(bestCols[2]) != "")
             data["addr"] := Trim(bestCols[2])
         if (IsObject(bestCols) && bestCols.Length >= 3 && Trim(bestCols[3]) != "")
