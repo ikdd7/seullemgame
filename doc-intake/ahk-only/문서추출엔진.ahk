@@ -154,20 +154,44 @@ DetectDocType(full) {
 }
 
 DetectName(full) {
-    ; 성명 뒤 한글 2~3음절을 욕심껏(줄바꿈도 이름 중간으로 흡수). '전화' 번짐만 제거.
-    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣](?:\s*[가-힣]){1,2})", &m) {
+    ; OCR이 한 곳에서 이름을 깨뜨려도(예: 관계인 '성준=' ) 다른 곳의 '성준현'을 살림.
+    ; 여러 후보를 모아 '가장 많이/길게' 나온 이름을 선택.
+    counts := Map()
+    _AddNameCands(full, "성\s*명\s*[:：(]\s*([가-힣](?:\s*[가-힣]){1,2})", counts)  ; 성명: 이름
+    _AddNameCands(full, "([가-힣](?:\s*[가-힣]){1,2})\s*서\s*명", counts)            ; 이름 서명
+    best := _PickName(counts)
+    if (best != "")
+        return best
+    ; 폴백: 성명 뒤 느슨하게
+    if RegExMatch(full, "성\s*명\s*[:：(]?\s*([가-힣](?:\s*[가-힣]){1,2})", &m) {
         n := NoSpace(m[1])
-        if (StrLen(n) = 3 && SubStr(n, 3, 1) = "전")   ; '…전화' 번짐 → 2음절로
-            n := SubStr(n, 1, 2)
-        return n
-    }
-    if RegExMatch(full, "관계인[^가-힣]{0,6}([가-힣](?:\s*[가-힣]){1,2})", &m2) {
-        n := NoSpace(m2[1])
-        if (StrLen(n) = 3 && SubStr(n, 3, 1) = "전")
-            n := SubStr(n, 1, 2)
-        return n
+        return (StrLen(n) = 3 && SubStr(n, 3, 1) = "전") ? SubStr(n, 1, 2) : n
     }
     return ""
+}
+
+_AddNameCands(s, rx, counts) {
+    pos := 1
+    while (pos := RegExMatch(s, rx, &m, pos)) {
+        n := NoSpace(m[1])
+        if (StrLen(n) = 3 && SubStr(n, 3, 1) = "전")     ; '…전화' 번짐 → 2음절
+            n := SubStr(n, 1, 2)
+        if (StrLen(n) >= 2 && StrLen(n) <= 3)
+            counts[n] := (counts.Has(n) ? counts[n] : 0) + 1
+        pos += Max(StrLen(m[0]), 1)
+    }
+}
+
+_PickName(counts) {
+    b3 := "", c3 := 0, b2 := "", c2 := 0           ; 3음절 우선, 그 안에서 최다 빈도
+    for nm, cnt in counts {
+        if (StrLen(nm) = 3) {
+            if (cnt > c3)
+                c3 := cnt, b3 := nm
+        } else if (cnt > c2)
+            c2 := cnt, b2 := nm
+    }
+    return (b3 != "") ? b3 : b2
 }
 
 DetectPhone(full) {
