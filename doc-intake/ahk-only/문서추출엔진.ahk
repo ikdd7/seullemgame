@@ -47,7 +47,7 @@ ExtractFromPDF(pdfPath, dbPath := "") {
     rightEdge := IsObject(labGubun) ? labGubun.x - 5 : 100000000
     bx := IsObject(labMyeong) ? labMyeong.x - 30 : 0
     ax := IsObject(labSoje)   ? labSoje.x - 20   : 0
-    ocrBuilding := NoSpace(ValueBelow(words, labMyeong, bx, rightEdge, 2.6))
+    ocrBuilding := CleanBuilding(NoSpace(ValueBelow(words, labMyeong, bx, rightEdge, 2.6)))
     ocrAddr     := CleanSpace(ValueBelow(words, labSoje, ax, 100000000, 2.2))
     ocrDept     := DetectDept(full)
 
@@ -142,14 +142,19 @@ DetectDocType(full) {
 }
 
 DetectName(full) {
-    ; 성명 뒤 ~ '전화/쉼표/괄호' 직전까지를 이름으로 (2~4음절).
-    ; 줄바꿈은 경계가 아님 → OCR이 '성준'/'현'으로 줄을 쪼개도 안 잘림.
-    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣](?:\s*[가-힣]){1,3}?)\s*(?=전\s*화|[,，)]|$)", &m)
-        return NoSpace(m[1])
-    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣]\s*[가-힣]\s*[가-힣]?)", &m2)
-        return NoSpace(m2[1])
-    if RegExMatch(full, "관계인[^가-힣]{0,6}([가-힣]{2,3})", &m3)
-        return m3[1]
+    ; 성명 뒤 한글 2~3음절을 욕심껏(줄바꿈도 이름 중간으로 흡수). '전화' 번짐만 제거.
+    if RegExMatch(full, "성\s*명\s*[:：]?\s*([가-힣](?:\s*[가-힣]){1,2})", &m) {
+        n := NoSpace(m[1])
+        if (StrLen(n) = 3 && SubStr(n, 3, 1) = "전")   ; '…전화' 번짐 → 2음절로
+            n := SubStr(n, 1, 2)
+        return n
+    }
+    if RegExMatch(full, "관계인[^가-힣]{0,6}([가-힣](?:\s*[가-힣]){1,2})", &m2) {
+        n := NoSpace(m2[1])
+        if (StrLen(n) = 3 && SubStr(n, 3, 1) = "전")
+            n := SubStr(n, 1, 2)
+        return n
+    }
     return ""
 }
 
@@ -293,3 +298,5 @@ Levenshtein(s, t) {
 
 NoSpace(s)    => RegExReplace(s, "\s", "")
 CleanSpace(s) => Trim(RegExReplace(s, "\s{2,}", " "))
+; 대상물명 OCR 노이즈(앞뒤 기호 등) 제거 → 한글/영숫자/()/-/, 만 남김
+CleanBuilding(s) => RegExReplace(s, "[^가-힣A-Za-z0-9()\-,]", "")

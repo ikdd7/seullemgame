@@ -40,6 +40,9 @@ OnLoadPDF(*) {
         return
     }
 
+    ; ★ DB 자동 생성/갱신 — 스캔 폴더 파일명의 (대상물명)으로 항상 최신화
+    EnsureDB(DOC_DB, SCAN_FOLDER)
+
     ; 상위 10개 중 '아직 이름 안 바뀐' 문서만 추림
     pending := PendingPDFs(SCAN_FOLDER, 10)
     if (pending.Length = 0) {
@@ -195,6 +198,56 @@ PendingPDFs(folder, topN) {
 ; "문서종류(대상물명).pdf" 형태면 이미 처리됨 → 건너뜀
 IsRenamed(name) {
     return RegExMatch(name, "^(자체점검보고서|이행계획서|이행완료 ?보고서)\(.+\)\.pdf$") > 0
+}
+
+; ── 스캔 폴더 파일명의 (대상물명)으로 대상물DB 자동 생성/갱신 ──
+EnsureDB(dbPath, scanFolder) {
+    existing := Map()                       ; 기존 주소/부서 보존
+    if FileExist(dbPath) {
+        i := 0
+        Loop Parse FileRead(dbPath, "UTF-8"), "`n", "`r" {
+            i++
+            if (i = 1 || A_LoopField = "")
+                continue
+            c := ParseCSVLine(A_LoopField)
+            nm := (c.Length >= 1) ? Trim(c[1]) : ""
+            if (nm != "")
+                existing[nm] := { addr: (c.Length >= 2 ? Trim(c[2]) : ""),
+                                  dept: (c.Length >= 3 ? Trim(c[3]) : "") }
+        }
+    }
+    order := [], seen := Map()
+    Loop Files, scanFolder "\*.pdf" {
+        SplitPath(A_LoopFileName, , , , &noext)
+        if RegExMatch(noext, "\(([^()]+)\)[^()]*$", &m) {
+            nm := Trim(m[1])
+            if (nm != "" && !seen.Has(nm))
+                seen[nm] := true, order.Push(nm)
+        }
+    }
+    for nm in existing
+        if !seen.Has(nm)
+            seen[nm] := true, order.Push(nm)
+
+    out := "대상물명,주소,부서`n"
+    for nm in order {
+        a := existing.Has(nm) ? existing[nm].addr : ""
+        d := existing.Has(nm) ? existing[nm].dept : ""
+        out .= QuoteCSV(nm) "," QuoteCSV(a) "," QuoteCSV(d) "`n"
+    }
+    try {
+        f := FileOpen(dbPath, "w", "UTF-8")
+        f.Write(out), f.Close()
+    }
+    return order.Length
+}
+
+QuoteCSV(s) {
+    if (InStr(s, ",") || InStr(s, '"') || InStr(s, "`n") || InStr(s, "`r")) {
+        s := StrReplace(s, '"', '""')
+        return '"' s '"'
+    }
+    return s
 }
 
 ; ── 비어있는 첫 행을 찾아 채우기 (없으면 행 추가) ───────────
