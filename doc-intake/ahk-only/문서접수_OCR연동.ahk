@@ -28,6 +28,12 @@ F9::OnLoadPDF()
 OnLoadPDF(*) {
     global SCAN_FOLDER, DOC_DB
 
+    ; include 순서와 무관하게 항상 설정값 보장
+    if !IsSet(SCAN_FOLDER) || SCAN_FOLDER = ""
+        SCAN_FOLDER := "C:\Users\User\Desktop\scan"
+    if !IsSet(DOC_DB) || DOC_DB = ""
+        DOC_DB := A_ScriptDir "\대상물DB.csv"
+
     if !DirExist(SCAN_FOLDER) {
         MsgBox("스캔 폴더를 찾을 수 없습니다:`n" SCAN_FOLDER
              . "`n`n문서접수_OCR연동.ahk 상단의 SCAN_FOLDER 경로를 확인하세요.", "오류", 16)
