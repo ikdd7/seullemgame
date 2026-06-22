@@ -40,31 +40,46 @@ OnLoadPDF(*) {
         return
     }
 
-    pdf := NewestPDF(SCAN_FOLDER, &mtime)
-    if (pdf = "") {
-        MsgBox("스캔 폴더에 PDF가 없습니다:`n" SCAN_FOLDER, "PDF 없음", 48)
+    ; 상위 10개 중 '아직 이름 안 바뀐' 문서만 추림
+    pending := PendingPDFs(SCAN_FOLDER, 10)
+    if (pending.Length = 0) {
+        MsgBox("최근 10개 문서가 모두 이미 정리(이름 변경)되어 있습니다.`n`n처리할 새 문서가 없어요.",
+               "처리할 문서 없음", 64)
+        SetStatus("처리할 새 문서 없음")
         return
     }
 
+    done := 0
+    for item in pending {
+        r := ProcessOne(item.path, item.mtime, DOC_DB, pending.Length, A_Index)
+        if (r = "stop")
+            break
+        if (r = "ok")
+            done++
+    }
+    SetStatus(done "건 처리 완료")
+}
+
+; ── 한 문서 처리 → "ok" / "skip" / "stop" ───────────────────
+ProcessOne(pdf, mtime, dbPath, total, idx) {
     SplitPath(pdf, &fname)
-    SetStatus("📄 분석 중… " fname)
+    SetStatus("📄 분석 중… (" idx "/" total ") " fname)
 
     try {
-        d := ExtractFromPDF(pdf, DOC_DB)
+        d := ExtractFromPDF(pdf, dbPath)
     } catch as e {
-        MsgBox(e.Message, "오류", 16)
-        SetStatus("❌ 추출 실패")
-        return
+        MsgBox(e.Message, "오류 - " fname, 16)
+        return "skip"
     }
 
-    head := "📄 최신 스캔: " fname "   (" FormatTime(mtime, "MM/dd HH:mm") ")`n"
+    head := "📄 (" idx "/" total ") " fname "   (" FormatTime(mtime, "MM/dd HH:mm") ")`n"
           . "───────────────────────────`n"
           . "▶ 문서종류 : " d["doc_type"] "`n"
           . "▶ 대상물명 : " d["building"] "`n"
 
     dt := d["doc_type"]
     if (dt = "결과보고서") {
-        ; ── 자체점검(실시결과) 보고서 → GUI 자동입력 ──
+        ; ── 자체점검(실시결과) 보고서 → GUI 입력 + 파일명 변경 ──
         msg := head
              . "▶ 주소     : " d["addr"] "`n"
              . "▶ 관계인   : " d["name"] "   (" d["phone"] ")`n"
@@ -72,35 +87,48 @@ OnLoadPDF(*) {
              . "▶ 부서     : " d["dept"] "`n"
              . "▶ DB매칭   : " d["matched"] "`n"
              . "───────────────────────────`n"
-             . "이 내용으로 빈 행에 입력할까요?"
-        if (MsgBox(msg, "자체점검 보고서 → 접수 입력", 4 + 32) = "Yes")
+             . "새 파일명 : " MakeFileName(d) "`n"
+             . "───────────────────────────`n"
+             . "빈 행에 입력하고 파일명도 변경할까요?   (취소=전체 중단)"
+        res := MsgBox(msg, "자체점검 보고서 → 접수+파일명", 3 + 32)
+        if (res = "Cancel")
+            return "stop"
+        if (res = "Yes") {
             FillRow(d)
-        else
-            SetStatus("취소됨")
+            RenamePDF(pdf, d)
+            return "ok"
+        }
+        return "skip"
     } else if (dt = "이행계획서" || dt = "이행완료보고서") {
         ; ── 이행계획서 / 이행완료 보고서 → 파일명만 변경 ──
         msg := head
              . "───────────────────────────`n"
              . "새 파일명 : " MakeFileName(d) "`n"
              . "───────────────────────────`n"
-             . "이 이름으로 파일명을 변경할까요?"
-        if (MsgBox(msg, dt " → 파일명 변경", 4 + 32) = "Yes")
+             . "이 이름으로 파일명을 변경할까요?   (취소=전체 중단)"
+        res := MsgBox(msg, dt " → 파일명 변경", 3 + 32)
+        if (res = "Cancel")
+            return "stop"
+        if (res = "Yes") {
             RenamePDF(pdf, d)
-        else
-            SetStatus("취소됨")
+            return "ok"
+        }
+        return "skip"
     } else {
-        ; ── 문서종류 미상 → 사용자가 선택 ──
+        ; ── 문서종류 미상 → 선택 ──
         msg := head
              . "───────────────────────────`n"
              . "문서종류를 자동 판별하지 못했습니다.`n`n"
-             . "[예] = GUI에 입력    [아니오] = 파일명만 변경    [취소] = 중단"
-        res := MsgBox(msg, "문서종류 미상", 3 + 48)
-        if (res = "Yes")
+             . "[예]=GUI입력   [아니오]=파일명변경   [취소]=전체중단"
+        res := MsgBox(msg, "문서종류 미상 - " fname, 3 + 48)
+        if (res = "Yes") {
             FillRow(d)
-        else if (res = "No")
+            return "ok"
+        } else if (res = "No") {
             RenamePDF(pdf, d)
-        else
-            SetStatus("취소됨")
+            return "ok"
+        }
+        return "stop"
     }
 }
 
@@ -108,7 +136,7 @@ OnLoadPDF(*) {
 MakeFileName(d) {
     static DOC_NAME := Map("이행완료보고서", "이행완료 보고서",
                            "이행계획서",     "이행계획서",
-                           "결과보고서",     "자체점검 결과보고서",
+                           "결과보고서",     "자체점검보고서",
                            "미상",           "문서")
     docName := DOC_NAME.Has(d["doc_type"]) ? DOC_NAME[d["doc_type"]] : d["doc_type"]
     base := (d["building"] != "") ? docName "(" d["building"] ")" : docName
@@ -141,15 +169,32 @@ RenamePDF(pdf, d) {
 ; 파일명에 못 쓰는 문자 제거
 CleanFileName(s) => RegExReplace(s, '[\\/:*?"<>|]', "")
 
-; ── 폴더에서 가장 최근 PDF 찾기 ─────────────────────────────
-NewestPDF(folder, &mtime) {
-    pdf := "", newest := 0
-    Loop Files, folder "\*.pdf" {
-        if (A_LoopFileTimeModified > newest)
-            newest := A_LoopFileTimeModified, pdf := A_LoopFileFullPath
+; ── 최근 topN개 중 '아직 이름 안 바뀐' PDF 목록 (최신순) ────
+PendingPDFs(folder, topN) {
+    all := []
+    Loop Files, folder "\*.pdf"
+        all.Push({ path: A_LoopFileFullPath, name: A_LoopFileName,
+                   mtime: A_LoopFileTimeModified })
+    ; 수정시각 내림차순 정렬(삽입정렬)
+    Loop all.Length - 1 {
+        i := A_Index + 1, key := all[i], j := i - 1
+        while (j >= 1 && all[j].mtime < key.mtime)
+            all[j + 1] := all[j], j--
+        all[j + 1] := key
     }
-    mtime := newest
-    return pdf
+    ; 상위 topN개 중 이름이 아직 안 바뀐 것만
+    result := []
+    Loop Min(topN, all.Length) {
+        it := all[A_Index]
+        if !IsRenamed(it.name)
+            result.Push(it)
+    }
+    return result
+}
+
+; "문서종류(대상물명).pdf" 형태면 이미 처리됨 → 건너뜀
+IsRenamed(name) {
+    return RegExMatch(name, "^(자체점검보고서|이행계획서|이행완료 ?보고서)\(.+\)\.pdf$") > 0
 }
 
 ; ── 비어있는 첫 행을 찾아 채우기 (없으면 행 추가) ───────────

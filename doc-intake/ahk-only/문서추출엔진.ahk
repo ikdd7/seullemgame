@@ -231,7 +231,7 @@ ParseCSVLine(line) {
 BestDBMatch(full, db) {
     if !db.Length
         return ""
-    f := SubStr(NoSpace(full), 1, 300)     ; 대상물명은 표 상단부 → 검색범위 제한(속도)
+    f := SubStr(NoSpace(full), 1, 400)     ; 대상물명은 표 상단부 → 검색범위 제한(속도)
     flen := StrLen(f)
     best := "", bestScore := 0.0
     for row in db {
