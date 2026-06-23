@@ -28,8 +28,8 @@ ExtractFromPDF(pdfPath, dbPath := "") {
         throw Error("이 PC에 '한국어 OCR'이 설치되어 있지 않습니다.`n`n"
             . "[설정]→[시간 및 언어]→[언어 및 지역]→한국어→[언어 옵션]에서 OCR 설치 후 재시도.")
 
-    ; 2) 1페이지 OCR
-    res   := OCR.FromPDF(pdfPath, {lang: koLang, scale: 2})[1]
+    ; 2) 1페이지 OCR (scale=3: 고해상도 렌더 → 작은 글자 인식률↑, 자동 적용)
+    res   := OCR.FromPDF(pdfPath, {lang: koLang, scale: 3})[1]
     words := ParseWords(res)
     full  := res.Text
 

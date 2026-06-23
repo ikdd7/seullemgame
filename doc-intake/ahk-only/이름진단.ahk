@@ -21,7 +21,7 @@ if (pdf = "") {
 }
 
 try
-    res := OCR.FromPDF(pdf, {lang: "ko", scale: 2})[1]
+    res := OCR.FromPDF(pdf, {lang: "ko", scale: 3})[1]
 catch as e {
     MsgBox("OCR 오류: " e.Message, "오류", 16)
     ExitApp()
