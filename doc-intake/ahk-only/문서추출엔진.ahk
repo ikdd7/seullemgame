@@ -349,5 +349,12 @@ Levenshtein(s, t) {
 
 NoSpace(s)    => RegExReplace(s, "\s", "")
 CleanSpace(s) => Trim(RegExReplace(s, "\s{2,}", " "))
-; 대상물명 OCR 노이즈(앞뒤 기호 등) 제거 → 한글/영숫자/()/-/, 만 남김
-CleanBuilding(s) => RegExReplace(s, "[^가-힣A-Za-z0-9()\-,]", "")
+; 대상물명 OCR 노이즈 제거
+CleanBuilding(s) {
+    s := RegExReplace(s, "[^가-힣A-Za-z0-9()\-,]", "")     ; 허용외 기호 제거
+    ; 한글 이름 '앞쪽'의 표 세로선 노이즈(l, ㅣ, |, -, _ 등) 제거 (뒤에 한글이 올 때만)
+    s := RegExReplace(s, "^[lIｌ|│¦\-_~]+(?=[가-힣])", "")
+    ; 한글 이름 '뒤쪽'의 같은 선 노이즈도 제거 (앞이 한글일 때만)
+    s := RegExReplace(s, "(?<=[가-힣])[lIｌ|│¦\-_~]+$", "")
+    return s
+}
