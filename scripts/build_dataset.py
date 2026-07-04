@@ -98,18 +98,20 @@ TRAILING_TAG_RE = re.compile(r"\s*\[([^\[\]]{1,40})\]\s*$")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
 BOLD_LABEL_RE = re.compile(r"^\*\*([^*]{1,40})\*\*\s*$")
 URL_RE = re.compile(r"https?://")
-IMPERATIVE_END_RE = re.compile(r"(보라|하라|하시오|시오|말하라|해보시오)[.)\s]*$")
+IMPERATIVE_END_RE = re.compile(r"(보라|하라|하시오|시오|말하라|해보시오)[.)\s\"'”’]*$")
 
 # 태그는 있으나 물음표가 없는 불릿 중, 해설·후기성 문장을 걸러내는 어미 블랙리스트
 COMMENTARY_END_RE = re.compile(
     r"(다|됨|음|함|임|평|것|존재|제한|참조|필요|적용|언급|확인|미확인|전함|후기|중"
-    r"|권장|유지|공개|상이|다수|계열|빈출|제시문|참고용|주류|암기)\s*[.。]?\s*$"
+    r"|권장|유지|공개|상이|다수|계열|빈출|제시문|참고용|주류|암기|이룸|배치|부여"
+    r"|평가|생략|진행|재개|대상|유효|개선|강화|변경|시행|도입|주제|질문|질의응답"
+    r"|보도|일괄|통용|화제|작용)\s*[.。]?\s*[\"'”’]?\s*$"
 )
-# 태그 성분에 이런 단어가 있으면 질문이 아니라 메모/후기
-NON_QUESTION_TAG_RE = re.compile(r"후기|참고용|출처")
-# 본문(끝 괄호 제거 후)에 이런 표지가 있으면 출처 안내/해설 → 물음표가 있어도 제외
+# 태그 성분에 이런 단어가 있으면 질문이 아니라 메모/후기 (":" 는 [확인: 나무위키] 류 출처 표기)
+NON_QUESTION_TAG_RE = re.compile(r"후기|참고용|출처|스니펫|나무위키|수험가|:")
+# 본문(괄호 제거 후)에 이런 표지가 있으면 출처 안내/해설 → 물음표가 있어도 제외
 COMMENTARY_MARKER_RE = re.compile(
-    r"게시글|게시판|열람|복기|원문|수험가|학원가|참고용|디시인사이드|okpass|다음카페|후기"
+    r"게시글|게시판|열람|복기|원문|수험가|학원가|참고용|디시인사이드|okpass|다음카페|후기|조언"
 )
 # 질문 뒤에 붙는 편집 주석 ("— 연결 공직가치: …", "— 쟁점: …", "— 청렴성·전문성" 등)
 ANNOTATION_TAIL_RES = [
@@ -128,6 +130,16 @@ def strip_trailing_paren(text: str) -> str:
         if not m or m.start() == 0:
             return t
         t = t[: m.start()].strip()
+
+
+def clean_core(text: str) -> str:
+    """판별용 코어 텍스트: 마크다운 마커·모든 괄호 구간 제거, 공백 정리."""
+    t = strip_markdown(text)
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r"\([^()]*\)", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
 
 
 def strip_markdown(text: str) -> str:
