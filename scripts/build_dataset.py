@@ -105,13 +105,24 @@ COMMENTARY_END_RE = re.compile(
     r"(다|됨|음|함|임|평|것|존재|제한|참조|필요|적용|언급|확인|미확인|전함|후기|중"
     r"|권장|유지|공개|상이|다수|계열|빈출|제시문|참고용|주류|암기|이룸|배치|부여"
     r"|평가|생략|진행|재개|대상|유효|개선|강화|변경|시행|도입|주제|질문|질의응답"
-    r"|보도|일괄|통용|화제|작용)\s*[.。]?\s*[\"'”’]?\s*$"
+    r"|보도|일괄|통용|화제|작용|추세|강조|가능|방식)\s*[.。]?\s*[\"'”’]?\s*$"
 )
-# 태그 성분에 이런 단어가 있으면 질문이 아니라 메모/후기 (":" 는 [확인: 나무위키] 류 출처 표기)
-NON_QUESTION_TAG_RE = re.compile(r"후기|참고용|출처|스니펫|나무위키|수험가|:")
+# 태그 성분에 이런 단어가 있으면 질문이 아니라 메모/후기
+NON_QUESTION_TAG_RE = re.compile(r"후기|참고용|출처|분위기|운영|결과")
 # 본문(괄호 제거 후)에 이런 표지가 있으면 출처 안내/해설 → 물음표가 있어도 제외
 COMMENTARY_MARKER_RE = re.compile(
-    r"게시글|게시판|열람|복기|원문|수험가|학원가|참고용|디시인사이드|okpass|다음카페|후기|조언"
+    r"게시글|게시판|열람 필요|열람 권장|열람이 제한|직접 열람|복기|원문|수험가|학원가"
+    r"|참고용|디시인사이드|okpass|다음카페|후기|합격생 조언|응시자 조언|\.md|상세는"
+)
+# 면접 형식·평정 설명 불릿의 머리말 (질문이 아님)
+META_PREFIX_RE = re.compile(
+    r"^(평정|판정|진행|현행|구조|구성|형식|절차|소요 시간|면접관|개별면접,"
+    r"|결과 결정|특징|준비 팁|출제 경향|사전조사서|평가 포인트|평가 관전|신규 확인"
+    r"|민선 \d+기|시정 비전|집단토의 연혁|3분 스피치|참고\s*:|원문\s*:|입실|대기장|면접 \d)"
+)
+# 본문 끝의 출처성 괄호 주석 ("(법률저널 보도)", "(합격 후기 기반)" 등)
+CITATION_PAREN_RE = re.compile(
+    r"\s*\([^()]*(후기|복기|보도|스니펫|카페|갤러리|기반|언론|나무위키|더쿠|위키)[^()]*\)\s*[.。]?\s*$"
 )
 # 질문 뒤에 붙는 편집 주석 ("— 연결 공직가치: …", "— 쟁점: …", "— 청렴성·전문성" 등)
 ANNOTATION_TAIL_RES = [
@@ -229,22 +240,32 @@ def is_question_candidate(text: str, has_tag: bool, tag_raw: str) -> bool:
     """불릿 본문이 질문(또는 발표 주제)인지 판별."""
     if URL_RE.search(text):
         return False
-    if has_tag and NON_QUESTION_TAG_RE.search(tag_raw or ""):
-        return False
-    core = strip_trailing_paren(strip_markdown(text))
-    # 출처 안내·복기 메모 등은 물음표가 있어도 질문이 아님
+    core = clean_core(text)
+    # 출처 안내·복기 메모 등은 물음표가 있어도 질문이 아님 (괄호 속 인용 표기는 무시)
     if COMMENTARY_MARKER_RE.search(core):
         return False
-    if "?" in core:
+    # 강한 질문 신호: 물음표 / 명령형 어미
+    if "?" in core or "？" in core:
         return True
     if IMPERATIVE_END_RE.search(core):
         return True
-    if has_tag:
-        # 태그는 있지만 물음표 없는 경우: 해설/후기성 문장 어미면 제외
-        if COMMENTARY_END_RE.search(core):
-            return False
+    # "평정요소: …", "판정: 우수/보통/미흡" 등 형식 설명 불릿 제외
+    if META_PREFIX_RE.match(core):
+        return False
+    # "질문1 / 질문2 / …" 형태의 복원 질문 목록
+    if text.count(" / ") >= 2:
         return True
-    return False
+    if not has_tag:
+        return False
+    # 괄호를 걷어낸 알맹이가 너무 짧으면 라벨성 항목 ("(…주제 일괄)" 등)
+    if len(core) < 8:
+        return False
+    # 태그는 있지만 물음표 없는 경우: 출처성 태그·해설성 어미면 제외
+    if NON_QUESTION_TAG_RE.search(tag_raw or ""):
+        return False
+    if COMMENTARY_END_RE.search(core):
+        return False
+    return True
 
 
 def extract_from_file(path: Path, category: str):
@@ -280,6 +301,7 @@ def extract_from_file(path: Path, category: str):
             continue
 
         body = mb.group(1).strip()
+        body = re.sub(r"^[★☆]\S*\s+", "", body)  # "★신규 [태그] …" 프리픽스
         tag_raw = None
         mt = LEADING_TAG_RE.match(body)
         if mt:
@@ -293,7 +315,11 @@ def extract_from_file(path: Path, category: str):
             trailing_tags.append(mt2.group(1).strip())
             body = body[: mt2.start()].strip()
 
-        all_tag = "/".join(filter(None, [tag_raw] + trailing_tags))
+        # "[확인 — 스티마 카페 후기]" / "[확인: 나무위키]" 류 출처 꼬리 제거
+        cleaned_tags = [
+            re.sub(r"\s*[—:].*$", "", t).strip() for t in [tag_raw] + trailing_tags if t
+        ]
+        all_tag = "/".join(filter(None, cleaned_tags))
 
         text = strip_markdown(body)
         # "— 연결 공직가치: …" / "— 쟁점: …" 류 편집 주석 꼬리 제거
@@ -301,6 +327,12 @@ def extract_from_file(path: Path, category: str):
             stripped = rx.sub("", text).strip()
             if len(stripped) >= 15:
                 text = stripped
+        # "(법률저널 보도)" 류 출처성 괄호 꼬리 제거
+        while True:
+            stripped = CITATION_PAREN_RE.sub("", text).strip()
+            if stripped == text or len(stripped) < 10:
+                break
+            text = stripped
 
         # 문두 "(세무직)" 류 직렬 표기 추출
         paren_job = None
@@ -325,6 +357,18 @@ def extract_from_file(path: Path, category: str):
 
         year, tag_region, tag_job, tag_type, reliability = parse_tag_components(all_tag)
         year = year or paren_year
+        if year is None:
+            # "2019 일반행정·우정: …" 처럼 본문이 연도로 시작하는 경우
+            mty = re.match(r"^(20\d{2})\b", text)
+            if mty:
+                year = int(mty.group(1))
+        if year is None:
+            # "## 2025년", "### 2022년" 같은 연도 섹션 하위의 질문
+            for ctx in (current_section, current_h2):
+                mh_year = re.match(r"^(20\d{2})\s*년", ctx or "")
+                if mh_year:
+                    year = int(mh_year.group(1))
+                    break
 
         region = tag_region
         if category == "region":
