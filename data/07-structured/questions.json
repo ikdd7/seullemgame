@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "korean-civil-service-interview-questions",
-    "generated_at": "2026-07-05T16:13:54+00:00",
+    "generated_at": "2026-07-05T16:26:25+00:00",
     "generator": "scripts/build_dataset.py",
     "source_dirs": [
       "02-common",
@@ -147,8 +147,16 @@
         "questions": 3
       },
       {
+        "file": "data/03-regions/중소시군-5차.md",
+        "questions": 0
+      },
+      {
         "file": "data/03-regions/지자체-인재상-슬로건.md",
         "questions": 13
+      },
+      {
+        "file": "data/03-regions/지자체-통계-팩트시트.md",
+        "questions": 0
       },
       {
         "file": "data/03-regions/충청남도.md",
