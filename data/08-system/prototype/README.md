@@ -493,3 +493,179 @@ python3 session_engine.py --region 서울특별시 --job 일반행정직 --inter
 3. **SPEECH_QA·PREWORK(사전조사서) 축약**: 스피치 후속질의·사전조사서 기반 추적질문(T2 대질)은 큐에 미포함.
 4. **SCORING은 스텁**: 로그 신호 집계만. STT 스피치지표·페르소나 앙상블 채점(scorer.py 연결)·과반 집계·FEEDBACK은 평가루브릭-설계.md §4-3 연결점으로 남김.
 5. **압박계수 게이트가 확률 스킵**: 발화 빈도 배수를 단일 확률로 근사(실제는 트리거 종류별 가중 가능).
+
+---
+
+# 통합 데모 파이프라인 (demo_pipeline.py)
+
+위 4개 프로토타입(`question_selector` · `session_engine` · `scorer` · `feedback_report`)을
+**한 번의 실행으로 잇는** 엔드투엔드 데모. 질문 선택 → 면접 진행(MockLLM 자동 답변) →
+각 답변 채점(MockScorer) → 위원 앙상블 집계 → 피드백 리포트까지 **표준 라이브러리만으로,
+API 키 없이, 결정적으로** 완주한다. 원본 4개 모듈은 수정하지 않고, 모듈 간 시그니처가
+맞지 않는 지점만 이 파일 안의 **어댑터 함수**로 이어 붙인다.
+
+## D-1. 전체 파이프라인 다이어그램
+
+```
+questions.json ─┐
+                ▼
+ [1] question_selector.select_questions(region,job,track,difficulty,seed)
+        └─> plan = { seq:[{phase,tier,question:{id,type,text,...}}], quota, diagnostics }
+                │           (질문 원문·유형·출제순서의 단일 출처)
+                ▼
+ [2] session_engine.SessionEngine(..., llm=MockLLMClient, provider=DemoAnswerProvider).run()
+        │  INTAKE→SPEECH→INTERVIEW(주질문+꼬리질문 트리거)→WRAPUP→SCORING(스텁)
+        └─> log = [{t,state,role(면접관/지원자/시스템),persona,qid,trigger,text}, ...]
+                │
+                │   ── 어댑터 1: _build_scoring_items(plan, log) ─────────────────
+                │      plan.seq(원문/유형/순서) + log(지원자 발화)를 결합해
+                │      [{qid,type,question,answer}] 로 변환. answer 는 같은 qid 의
+                │      주답변+꼬리질문 답변을 순서대로 이어 붙인 '답변 스레드'.
+                │   ── 어댑터 2: _committee_ids_for(engine.personas) ─────────────
+                │      면접 위원 수(2인/3인)에 맞춰 채점 위원 앙상블 규모 결정.
+                ▼
+ [3] scorer.score_session(items, committee_ids)   ← 위원 N인 × 문항별 §1-4 채점
+ [4]   └─ 내부 aggregate_verdicts(과반 규칙) = '위원 앙상블 집계'
+        └─> session_result = { results, aggregate, element_verdicts, final_grade, ... }
+                ▼
+ [5] feedback_report.generate_report(session_result)  ← 재채점 없이 마크다운 렌더
+        └─> 응시자용 피드백 리포트(stdout, --save 시 파일)
+```
+
+`session_engine` 자체의 SCORING 상태는 **로그 신호 집계 스텁**이다. 데모 파이프라인은 그
+연결점을 실제 `scorer` → `feedback_report` 호출로 **대체**한다(엔진 SCORING 스텁 출력은
+전환 지점 참고용으로 그대로 노출된다).
+
+## D-2. 어댑터가 메운 시그니처 간극 (원본 무수정)
+
+| 간극 | 원인 | 해결(어댑터) |
+|---|---|---|
+| 세션 로그 ↔ 채점 입력 | `session_engine`은 `log`(발화 dict 스트림)를 내보내고, `scorer`는 `[{qid,type,question,answer}]`를 받는다 | `_build_scoring_items(plan, log)` — 로그의 지원자 발화를 qid로 그룹핑하고, 질문 원문/유형은 `plan["seq"]`에서 가져와 결합 |
+| 질문 원문 출처 | 로그의 면접관 발화는 페르소나 어조(예: "네, 편하게 말씀하셔도…")가 덧입혀져 **원문이 아님** | 채점용 `question`은 로그가 아니라 `plan["seq"]`의 `question.text`에서 취함 |
+| 답변 단위 불일치 | scorer는 문항당 답변 1개를 채점하는데, 한 주질문에 주답변+꼬리질문 답변이 여럿 | 같은 qid의 지원자 발화를 로그 순서대로 이어 붙여 '답변 스레드' 1개로 만들어 문항당 1답변으로 정규화 |
+| 면접 위원 수 ↔ 채점 위원 수 | `session_engine` 페르소나 로스터(2인/3인)와 `scorer` 위원 앙상블이 별개 인자 | `_committee_ids_for(personas)` — 2인→`(J-STD,J-STR)`, 3인→`+J-JOB`로 정렬 |
+
+이 4가지 외에는 각 모듈의 공개 함수 시그니처를 그대로 호출한다(`qs.select_questions`,
+`se.SessionEngine(...).run()`, `sc.score_session`, `fr.generate_report`).
+
+## D-3. 사용법
+
+```bash
+# 기본 (지방직 표준, 실전 모드, seed=42) — 전 단계 로그 + 피드백 리포트를 stdout에
+python3 demo_pipeline.py --region 서울특별시 --job 일반행정직
+
+# 3인 트랙(고압박) — 위원C 압박형 T1 소명질문 실행 + 채점 위원 3인
+python3 demo_pipeline.py --region 경기도 --job 일반행정직
+
+# 국가직9급 트랙 / 초급 난이도 / 시드 지정
+python3 demo_pipeline.py --region 서울특별시 --job 일반행정직 --track 국가직9급
+python3 demo_pipeline.py --region 부산광역시 --job 소방직 --difficulty 초급 --seed 7
+
+# 리포트를 파일로 저장(--save, 경로 생략 시 feedback_<지역>_<직렬>_seed<N>.md 자동 생성)
+python3 demo_pipeline.py --region 대구광역시 --job 일반행정직 --save
+python3 demo_pipeline.py --region 대구광역시 --job 일반행정직 --save /path/to/report.md
+```
+
+| 옵션 | 기본 | 설명 |
+|---|---|---|
+| `--region` / `--job` | (필수) | 지자체·직렬 (예: 서울특별시 / 일반행정직) |
+| `--track` | 지방직표준 | `지방직표준` \| `국가직9급` |
+| `--difficulty` | 실전 | `실전` \| `초급` |
+| `--seed` | 42 | 질문선택+압박계수 게이트 재현 시드 |
+| `--save [PATH]` | off | 피드백 리포트를 마크다운 파일로 저장(경로 생략 시 자동 파일명) |
+
+프로그램 임포트도 가능:
+
+```python
+import demo_pipeline as dp
+session_result, report_md = dp.run_pipeline("서울특별시", "일반행정직",
+                                            track="지방직표준", difficulty="실전", seed=42)
+print(session_result["final_grade"])   # 종합 등급
+# report_md = 응시자용 피드백 마크다운
+```
+
+## D-4. 샘플 출력 (발췌)
+
+```
+##############################################################################
+#  단계 1 · 질문 선택 (question_selector.select_questions)
+##############################################################################
+쿼터: 공직가치2  인성3  직무3  지역현안1  상황형1  (합계 10)
+선택된 주질문 10개 (유형 순):
+   1. [오프닝  ] 사회생활을 하면서 겪은 갈등 상황과 해결 방법은?   (id=q01013 type=인성)
+   ...
+
+##############################################################################
+#  단계 2 · 면접 진행 (session_engine.SessionEngine.run · MockLLMClient)
+##############################################################################
+[t005][INTERVIEW][위원A/온화형] 네, 편하게 말씀하셔도 됩니다. 사회생활을 하면서 겪은 갈등 상황과…
+        (지원자) 학창 시절 봉사 동아리 회장으로 팀을 이끈 경험이 있습니다. 그때 정말 열심히 했습니다.
+   ↳ [트리거 T3 경험주장(STAR) 감지: '경험이 있습니다' → 위원A 꼬리질문 (뎁스 1/3)]
+   ... (INTAKE→SPEECH→INTERVIEW 꼬리질문→WRAPUP 전체 전사)
+
+##############################################################################
+#  단계 3·4 · 각 답변 채점 + 위원 앙상블 집계 (scorer.score_session · MockScorer)
+##############################################################################
+채점 위원 앙상블: J-STD, J-STR (N=2, 과반=2)
+문항별 답변 스레드 → 위원별 개인등급:
+  - q01013   [인성   ] 답변 130자 → 보통/보통
+  ...
+세션 대표 요소판정(소통/헌신/창의/윤리): 중 / 중 / 중 / 중
+감지된 red flag 계열: 없음
+종합 등급: 보통
+
+##############################################################################
+#  단계 5 · 피드백 리포트 생성 (feedback_report.generate_report)
+##############################################################################
+# 모의면접 피드백 리포트
+- 문항 수: 10개 (유형: 공직가치, 상황형, 인성, 지역현안, 직무)
+## 1. 종합 등급: **보통**
+... (강점 / 개선점 / 모범답변 방향 / 스피치 코칭 / 다음 연습 질문 / 마무리)
+```
+
+## D-5. 검증 결과 (엔드투엔드 완주)
+
+| 조합 | 트랙/위원 | 완주 | 채점 앙상블 | 종합 등급 |
+|---|---|---|---|---|
+| 서울 · 일반행정직 | 지방직표준 / 2인(0.4) | ✓ | J-STD·J-STR | 보통 |
+| 경기 · 일반행정직 | 지방직표준 / 3인(0.9) | ✓ | J-STD·J-STR·J-JOB | 보통 |
+| 부산 · 소방직 | 지방직표준 / 2인(0.2) | ✓ | J-STD·J-STR | 보통 |
+| 서울 · 일반행정직 | 국가직9급 / 2인 | ✓ | J-STD·J-STR | 보통 |
+| 대구 · 일반행정직 (seed 7, --save) | 지방직표준 / 3인 | ✓ | 3인 | 보통 |
+
+- **결정성**: 동일 인자 2회 실행 결과가 완전히 동일(`diff` 무차이).
+- **위원 수 연동**: 3인 트랙(경기)에서 위원C(압박형)가 T1 소명질문을 실행하고, 채점도 3인 앙상블로 자동 확장됨을 확인.
+- **모듈 결합**: 질문 원문/유형은 `question_selector` → 답변은 `session_engine` 로그 → 채점/집계는 `scorer` → 렌더는 `feedback_report`로 값이 온전히 흘러감을 단계 로그로 확인.
+
+> **관찰(정상 동작)**: 데모 5조합의 종합 등급이 모두 **보통**으로 나온다. 이는 버그가 아니라
+> **두 프로토타입의 데모 어휘가 독립적으로 작성**됐기 때문이다. `session_engine`의 자동 답변
+> T1 표현("규정을 조금 유연하게 적용")은 `scorer`의 red flag 패턴 테이블("규정에 조금 어긋나더라도",
+> "유연하게 해석해서라도" 등)과 문자열이 겹치지 않아 red flag가 발화되지 않고, 답변이 짧아
+> 150자 길이 게이트도 넘지 못한다 → 전 요소 '중' → 보수적 '보통'. 채점→집계→리포트 **뒷단
+> 자체는 등급을 정상 판별**한다: 실제 red flag 표현이 담긴 답변을 같은 경로로 흘리면
+> `final_grade=미흡`(red flag `위법정당화·은폐책임전가`)이 나오고, `scorer.py --selftest`의
+> 골든셋 회귀는 우수/보통/미흡을 9/9로 구분한다. 실제 LLM 답변자로 교체하면 이 어휘 정합
+> 문제는 사라진다.
+
+## D-6. 실제 LLM 교체 시 바뀌는 지점
+
+데모 파이프라인의 **연결 구조(어댑터·호출 순서)는 그대로 두고**, Mock 백엔드만 교체하면
+실서비스 파이프라인이 된다. 바뀌는 지점은 각 모듈의 교체 포인트와 동일하다:
+
+1. **면접관 발화** — `session_engine`의 `MockLLMClient` → `AnthropicLLMClient`
+   (페르소나 시스템 프롬프트 + §5 가드레일, 꼬리질문 temp 0.3). `demo_pipeline.py`에서는
+   `se.SessionEngine(..., llm=...)` 인자 한 줄만 교체.
+2. **답변자** — 데모는 `DemoAnswerProvider`(대본). 실사용은 `StdinAnswerProvider`(사람 입력)
+   또는 STT 파이프라인. `provider=` 인자만 교체.
+3. **채점기** — `scorer`의 `MockScorer` → §1 프롬프트로 LLM을 호출하는 `LLMClient` 구현체.
+   `score_session(...)` 내부 `score_answer(..., client=)`에 주입(집계 `aggregate_verdicts`는
+   결정적 코드라 그대로 재사용).
+4. **꼬리질문 트리거** — 키워드 휴리스틱(`detect_trigger`) → 경량 LLM 1회 분석으로 교체 시
+   red flag/구체성 판정 재현율이 오르고, 위 D-5의 어휘 정합 한계가 해소됨.
+5. **피드백 문장** — `feedback_report.generate_report`의 규칙 조립 → §4 피드백 LLM(Sonnet급)
+   재서술로 교체 가능. **단 등급/요소판정은 입력값 그대로**(재채점 금지), 스피치는 등급 분리 유지.
+6. **스피치 지표** — `feedback_report._speech_metrics` 스텁(글자수 기반) → 실제 STT + 음성
+   분석(CPM·필러·침묵)으로 교체.
+
+어댑터 2개(`_build_scoring_items`, `_committee_ids_for`)는 **데이터 형태 변환**이라 Mock↔실제
+교체와 무관하게 유지된다(단, 실제 STT 답변도 동일하게 qid별 스레드로 묶이면 그대로 동작).
