@@ -1,14 +1,14 @@
 {
   "meta": {
     "name": "korean-civil-service-interview-questions",
-    "generated_at": "2026-07-06T05:31:47+00:00",
+    "generated_at": "2026-07-06T05:37:35+00:00",
     "generator": "scripts/build_dataset.py",
     "source_dirs": [
       "02-common",
       "03-regions",
       "04-jobs"
     ],
-    "total_questions": 3163,
+    "total_questions": 3240,
     "files_scanned": [
       {
         "file": "data/02-common/2018-2023-과거복기-아카이브.md",
@@ -251,6 +251,10 @@
         "questions": 82
       },
       {
+        "file": "data/04-jobs/소방직.md",
+        "questions": 77
+      },
+      {
         "file": "data/04-jobs/일반행정직.md",
         "questions": 84
       },
@@ -277,31 +281,31 @@
     ],
     "distributions": {
       "category": {
-        "job": 1849,
+        "job": 1926,
         "region": 922,
         "common": 392
       },
       "type": {
-        "직무": 1201,
+        "직무": 1250,
         "지역현안": 978,
-        "상황형": 520,
-        "공직가치": 149,
+        "상황형": 539,
+        "공직가치": 155,
         "인성": 128,
         "(없음)": 95,
-        "발표": 41,
+        "발표": 44,
         "시사": 40,
         "후속": 11
       },
       "reliability": {
-        "(없음)": 1659,
+        "(없음)": 1720,
         "예상": 621,
-        "빈출": 428,
-        "복원": 230,
+        "빈출": 440,
+        "복원": 234,
         "기출": 129,
         "확인": 96
       },
       "region": {
-        "(없음)": 2165,
+        "(없음)": 2242,
         "서울특별시": 84,
         "세종특별자치시": 44,
         "경기도": 32,
@@ -460,6 +464,7 @@
         "간호직": 83,
         "보건직": 82,
         "세무직": 82,
+        "소방직": 78,
         "특수채용": 63,
         "토목직": 59,
         "기계직": 58,
@@ -472,11 +477,10 @@
         "운전직": 24,
         "우정직": 3,
         "고용노동직": 2,
-        "교정직": 2,
-        "소방직": 1
+        "교정직": 2
       },
       "year": {
-        "(미상)": 2976,
+        "(미상)": 3052,
         "2015": 3,
         "2016": 4,
         "2017": 1,
@@ -485,7 +489,7 @@
         "2020": 25,
         "2021": 22,
         "2022": 31,
-        "2023": 20,
+        "2023": 21,
         "2024": 21,
         "2025": 18,
         "2026": 14,
@@ -30142,6 +30146,853 @@
     },
     {
       "id": "q02695",
+      "text": "화재의 분류(A·B·C·D·K급)를 설명해보라. A급(일반/백색), B급(유류/황색), C급(전기/청색), D급(금속), K급(주방)의 특징은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02696",
+      "text": "연소의 3요소(가연물·산소·점화원)와 4요소(+연쇄반응)를 말해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02697",
+      "text": "소화 방법 4가지(냉각·질식·제거·억제(부촉매))를 설명해보라. 각 화재급에 맞는 소화법은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02698",
+      "text": "전기(C급) 화재에 물을 뿌리면 안 되는 이유는? 적응 소화약제는? (CO2·분말·할로겐화합물)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02699",
+      "text": "플래시오버(Flashover)란 무엇인가? 발생 원리와 위험성은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02700",
+      "text": "백드래프트(Backdraft)란 무엇인가? 전조 증상과 대응(지붕 배연 등)은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02701",
+      "text": "롤오버(Rollover), 연기폭발과 백드래프트의 차이는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02702",
+      "text": "화재의 성장 단계(초기→성장기→최성기→감쇠기)를 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02703",
+      "text": "훈소(무염연소)란 무엇인가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02704",
+      "text": "인화점·발화점·연소점의 차이를 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02705",
+      "text": "훈련·화재 시 연기(중성대)의 특성과 저자세 대피가 필요한 이유는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02706",
+      "text": "위험물의 6가지 유별 분류(1류 산화성고체 ~ 6류 산화성액체)를 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "복원",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02707",
+      "text": "각 유별 대표 물질과 소화방법을 말해보라. (3류 금수성 물질에 물 사용 금지 등)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02708",
+      "text": "화재조사란 무엇이며 왜 하는가? 발화지점·원인 규명 절차는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02709",
+      "text": "방화와 실화의 차이, 화재조사관의 역할을 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02710",
+      "text": "소방시설 5종(소화설비·경보설비·피난구조설비·소화용수설비·소화활동설비)을 분류해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02711",
+      "text": "소화설비의 종류를 말해보라. (소화기구, 옥내·옥외소화전, 스프링클러, 물분무, 포, CO2, 분말 등)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02712",
+      "text": "옥내소화전의 사용법·방수압·방수량 기준을 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02713",
+      "text": "스프링클러설비의 종류(습식·건식·준비작동식·일제살수식)와 작동 원리를 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02714",
+      "text": "경보설비의 종류를 말해보라. (자동화재탐지설비, 단독경보형감지기, 비상방송, 자동화재속보설비 등)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02715",
+      "text": "자동화재탐지설비의 구성(감지기·발신기·수신기·음향장치)과 감지기 종류(차동식·정온식·연기)를 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02716",
+      "text": "피난구조설비의 종류(완강기, 유도등·유도표지, 방열복, 공기호흡기 등)를 말해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02717",
+      "text": "소화활동설비의 종류(제연설비, 연결송수관, 연결살수, 비상콘센트, 무선통신보조, 연소방지)를 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02718",
+      "text": "제연설비는 왜 필요한가? (연기 확산 차단·피난로 확보)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02719",
+      "text": "주택용 소방시설(단독경보형감지기·소화기)의 설치 의무와 보급 필요성을 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "발표",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02720",
+      "text": "소화기의 유효기간·점검법(압력계 지침)을 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02721",
+      "text": "요구조자(인명) 검색·구조 시 우선순위를 어떻게 정하는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02722",
+      "text": "고층건물 화재 시 인명구조·대피 방안을 발표하라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": 2023,
+      "type": "발표",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02723",
+      "text": "재난현장 표준작전절차(SOP)를 아는가? 현장지휘체계(ICS)란?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02724",
+      "text": "긴급구조통제단(통합지휘)의 구성과 역할은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02725",
+      "text": "붕괴·매몰 사고 시 구조 절차와 안전관리는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02726",
+      "text": "수난구조·산악구조·화학사고 등 특수구조대의 역할을 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02727",
+      "text": "소방 드론·로봇 등 신기술 활용 방안은? (드론 자격증 필요성)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "발표",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02728",
+      "text": "재난 예방·대비·대응·복구 4단계를 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02729",
+      "text": "심폐소생술(CPR)의 순서와 가슴압박 속도·깊이를 말해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02730",
+      "text": "AED(자동심장충격기) 사용법을 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02731",
+      "text": "응급환자 중증도 분류(START 트리아지: 흑·적·황·녹)를 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02732",
+      "text": "심정지 환자의 골든타임(4~5분)과 생존사슬(체인 오브 서바이벌)을 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02733",
+      "text": "현장 DNR(소생거부/이송 중단)은 어떤 경우에 가능한가? (명백한 사망징후, 의사 지도 등)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02734",
+      "text": "응급구조사와 응급실 간호사의 차이는? 1급·2급 응급구조사의 업무 범위 차이는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "복원",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02735",
+      "text": "구급대원이 병원 밖에서 할 수 있는 응급처치의 범위(법적 한계)는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02736",
+      "text": "비응급 환자의 구급차 이용(택시화)에 대한 견해는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02737",
+      "text": "소방기본법의 목적은 무엇인가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02738",
+      "text": "강제처분(소방활동 방해 물건·토지 사용·제한·처분)이란 무엇인가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": "복원",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02739",
+      "text": "피난명령·긴급조치(댐·저수지·수도 개폐장치 조작)의 근거를 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02740",
+      "text": "화재의 예방 및 안전관리에 관한 법률(화재예방법)의 주요 내용은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02741",
+      "text": "소방시설 설치 및 관리에 관한 법률(소방시설법)이 규정하는 것은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02742",
+      "text": "소방안전관리자 제도란 무엇인가? 특정소방대상물이란?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02743",
+      "text": "119구조·구급에 관한 법률의 목적을 아는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02744",
+      "text": "의용소방대의 역할은 무엇인가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02745",
+      "text": "소방공무원이 특정직 공무원인 이유는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02746",
+      "text": "소방공무원의 4대 업무를 설명해보라.",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02747",
+      "text": "소방공무원에게 가장 중요한 자질은 무엇이라고 생각하는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02748",
+      "text": "왜 소방공무원이 되려 하는가? 지원동기는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02749",
+      "text": "소방관으로서 갖춰야 할 공직관은 무엇인가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02750",
+      "text": "구급대원(구조대원)으로서 가져야 할 자질은?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "직무",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02751",
+      "text": "소방과 관련해 최근 관심 있게 본 뉴스는?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02752",
+      "text": "소방 조직 문화(상명하복·계급)에 어떻게 적응하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "공직가치",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02753",
+      "text": "화재현장에서 가족과 일반 시민이 동시에 위급하다면 누구를 먼저 구조하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02754",
+      "text": "구조상황에서 동료와 일반 시민 중 누구를 먼저 구조하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02755",
+      "text": "요구조자를 빨리 구할 수 있다고 판단해 건물에 진입하려는데 지휘관이 막는다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": "복원",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02756",
+      "text": "건물이 붕괴될 것 같은데(또는 지하 가스통 폭발 위험) 지휘관이 진입하라고 지시한다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02757",
+      "text": "만취자 출동 시 응급환자인지 단순 주취자인지 판단이 안 된다. 어떻게 대응하겠는가? (뇌졸중·저혈당 감별)",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02758",
+      "text": "주취자가 구급대원에게 폭언·폭행을 하며 이송을 거부한다. 어떻게 대응하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02759",
+      "text": "명백한 오인 신고·허위 신고가 반복되는 민원인이 있다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02760",
+      "text": "비긴급 생활안전 출동(벌집 제거·문 개방) 중 인근에서 화재 신고가 접수됐다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02761",
+      "text": "환자·보호자가 특정 대형병원 이송만 고집한다. 가까운 병원과 원거리 병원 중 어떻게 판단하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02762",
+      "text": "동료가 현장활동 중 순직(또는 중상)했다. 트라우마를 어떻게 극복하고 다시 현장에 나가겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02763",
+      "text": "반복되는 참혹한 현장으로 PTSD 증상이 나타난다. 어떻게 대처하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": "빈출",
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02764",
+      "text": "화재현장에 진입했으나 시야가 확보되지 않고 공기호흡기 잔량이 얼마 남지 않았다. 어떻게 판단하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02765",
+      "text": "요구조자가 여러 명인데 인력·장비가 부족하다. 구조 우선순위를 어떻게 정하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02766",
+      "text": "상관이 안전수칙에 어긋나는 무리한 진입을 지시한다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02767",
+      "text": "소방차 출동 중 불법주정차·얌체운전으로 길이 막혀 골든타임을 놓칠 상황이다. 어떻게 대응하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02768",
+      "text": "반려동물(또는 가축)과 사람이 동시에 구조 대상일 때 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02769",
+      "text": "화재현장에서 시민이 무리하게 진입하려 하거나 구경꾼이 소방활동을 방해한다. 어떻게 통제하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02770",
+      "text": "동료가 현장활동 규정을 어기거나 근무 중 음주 등 비위를 저질렀다. 어떻게 하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02771",
+      "text": "응급환자가 감염병(결핵·코로나 등) 의심 환자다. 어떻게 처치·이송하겠는가?",
+      "category": "job",
+      "region": null,
+      "job": "소방직",
+      "year": null,
+      "type": "상황형",
+      "reliability": null,
+      "source_file": "data/04-jobs/소방직.md"
+    },
+    {
+      "id": "q02772",
       "text": "행정이란 무엇이라고 생각하는가? 행정과 경영의 차이는 무엇인가?",
       "category": "job",
       "region": null,
@@ -30152,7 +31003,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02696",
+      "id": "q02773",
       "text": "행정에서 가장 중요한 가치는 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -30163,7 +31014,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02697",
+      "id": "q02774",
       "text": "정부(행정부)의 가장 중요한 역할은 무엇인가? 오늘날 정부가 수행해야 할 역할은?",
       "category": "job",
       "region": null,
@@ -30174,7 +31025,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02698",
+      "id": "q02775",
       "text": "큰 정부와 작은 정부 중 어느 쪽이 바람직하다고 생각하는가?",
       "category": "job",
       "region": null,
@@ -30185,7 +31036,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02699",
+      "id": "q02776",
       "text": "공익이란 무엇인가? 공익과 사익이 충돌하면 어떻게 해야 하는가?",
       "category": "job",
       "region": null,
@@ -30196,7 +31047,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02700",
+      "id": "q02777",
       "text": "형평성과 효율성이 충돌할 때 무엇을 우선해야 하는가?",
       "category": "job",
       "region": null,
@@ -30207,7 +31058,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02701",
+      "id": "q02778",
       "text": "적극행정이란 무엇인가? 알고 있는 적극행정 사례를 말해보라.",
       "category": "job",
       "region": null,
@@ -30218,7 +31069,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02702",
+      "id": "q02779",
       "text": "적극행정 면책제도(적극행정 운영규정)에 대해 아는 대로 설명해보라.",
       "category": "job",
       "region": null,
@@ -30229,7 +31080,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02703",
+      "id": "q02780",
       "text": "소극행정의 유형(적당편의, 복지부동, 탁상행정, 관중심 행정)을 아는가?",
       "category": "job",
       "region": null,
@@ -30240,7 +31091,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02704",
+      "id": "q02781",
       "text": "공무원에게 요구되는 공직가치(애국심, 책임감, 투명성, 공정성, 청렴성, 도덕성, 공익성) 중 가장 중요한 것은?",
       "category": "job",
       "region": null,
@@ -30251,7 +31102,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02705",
+      "id": "q02782",
       "text": "공무원의 6대 의무(성실, 복종, 친절공정, 비밀엄수, 청렴, 품위유지)를 말해보라.",
       "category": "job",
       "region": null,
@@ -30262,7 +31113,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02706",
+      "id": "q02783",
       "text": "공무원 행동강령에 대해 아는 대로 말해보라.",
       "category": "job",
       "region": null,
@@ -30273,7 +31124,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02707",
+      "id": "q02784",
       "text": "청탁금지법(김영란법)의 주요 내용(3만·5만·10만 → 현행 기준)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -30284,7 +31135,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02708",
+      "id": "q02785",
       "text": "이해충돌방지법이 무엇인지, 왜 필요한지 설명해보라.",
       "category": "job",
       "region": null,
@@ -30295,7 +31146,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02709",
+      "id": "q02786",
       "text": "공무원 헌장에 대해 아는 대로 말해보라.",
       "category": "job",
       "region": null,
@@ -30306,7 +31157,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02710",
+      "id": "q02787",
       "text": "MZ세대 공무원의 조기 퇴직(공직 이탈) 원인과 해결 방안은?",
       "category": "job",
       "region": null,
@@ -30317,7 +31168,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02711",
+      "id": "q02788",
       "text": "공직사회의 무사안일·복지부동을 개선할 방법은?",
       "category": "job",
       "region": null,
@@ -30328,7 +31179,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02712",
+      "id": "q02789",
       "text": "전자정부란 무엇인가? 정부24를 이용해본 경험이 있는가?",
       "category": "job",
       "region": null,
@@ -30339,7 +31190,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02713",
+      "id": "q02790",
       "text": "빅데이터를 행정에 어떻게 활용할 수 있는가?",
       "category": "job",
       "region": null,
@@ -30350,7 +31201,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02714",
+      "id": "q02791",
       "text": "AI(챗GPT 등)를 행정에 활용할 방안과 그에 따른 부작용은?",
       "category": "job",
       "region": null,
@@ -30361,7 +31212,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02715",
+      "id": "q02792",
       "text": "데이터기반행정이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -30372,7 +31223,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02716",
+      "id": "q02793",
       "text": "규제 개혁이 왜 필요한가? 규제 샌드박스에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -30383,7 +31234,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02717",
+      "id": "q02794",
       "text": "정책 결정 과정에서 주민(시민) 참여가 왜 중요한가?",
       "category": "job",
       "region": null,
@@ -30394,7 +31245,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02718",
+      "id": "q02795",
       "text": "성과주의 예산제도, 주민참여예산제도에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -30405,7 +31256,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02719",
+      "id": "q02796",
       "text": "법치행정(행정의 법률적합성)의 원칙을 설명해보라.",
       "category": "job",
       "region": null,
@@ -30416,7 +31267,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02720",
+      "id": "q02797",
       "text": "행정법의 일반원칙(비례의 원칙, 신뢰보호의 원칙, 평등의 원칙, 부당결부금지의 원칙)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -30427,7 +31278,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02721",
+      "id": "q02798",
       "text": "기속행위와 재량행위의 차이는 무엇인가?",
       "category": "job",
       "region": null,
@@ -30438,7 +31289,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02722",
+      "id": "q02799",
       "text": "행정행위(행정처분)란 무엇인가? 행정지도와의 차이는?",
       "category": "job",
       "region": null,
@@ -30449,7 +31300,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02723",
+      "id": "q02800",
       "text": "행정심판과 행정소송의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -30460,7 +31311,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02724",
+      "id": "q02801",
       "text": "행정절차법상 처분의 사전통지·의견제출·청문 제도를 설명해보라.",
       "category": "job",
       "region": null,
@@ -30471,7 +31322,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02725",
+      "id": "q02802",
       "text": "행정대집행이란 무엇인가? 절차는 어떻게 되는가?",
       "category": "job",
       "region": null,
@@ -30482,7 +31333,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02726",
+      "id": "q02803",
       "text": "정보공개청구 제도란? 비공개 대상 정보에는 어떤 것이 있는가?",
       "category": "job",
       "region": null,
@@ -30493,7 +31344,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02727",
+      "id": "q02804",
       "text": "정보공개와 개인정보보호가 충돌하는 경우 어떻게 처리해야 하는가?",
       "category": "job",
       "region": null,
@@ -30504,7 +31355,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02728",
+      "id": "q02805",
       "text": "민원 처리 법정 기한(민원처리에 관한 법률)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -30515,7 +31366,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02729",
+      "id": "q02806",
       "text": "행정기본법이 제정된 취지를 아는가?",
       "category": "job",
       "region": null,
@@ -30526,7 +31377,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02730",
+      "id": "q02807",
       "text": "지방자치란 무엇인가? 지방자치의 장점과 단점을 말해보라.",
       "category": "job",
       "region": null,
@@ -30537,7 +31388,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02731",
+      "id": "q02808",
       "text": "지방자치에서 제일 중요한 것은 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -30548,7 +31399,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02732",
+      "id": "q02809",
       "text": "지방분권이 왜 필요한가? 중앙집권과 지방분권의 장단점은?",
       "category": "job",
       "region": null,
@@ -30559,7 +31410,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02733",
+      "id": "q02810",
       "text": "지방자치단체의 종류(광역/기초)와 사무(자치사무, 단체위임사무, 기관위임사무)를 구분해보라.",
       "category": "job",
       "region": null,
@@ -30570,7 +31421,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02734",
+      "id": "q02811",
       "text": "조례와 규칙의 차이는 무엇인가? 조례 제정 절차를 아는가?",
       "category": "job",
       "region": null,
@@ -30581,7 +31432,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02735",
+      "id": "q02812",
       "text": "주민참여제도(주민투표, 주민소환, 주민감사청구, 주민조례발안, 주민참여예산)를 아는 대로 말해보라.",
       "category": "job",
       "region": null,
@@ -30592,7 +31443,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02736",
+      "id": "q02813",
       "text": "지방재정자립도란 무엇인가? 우리 지자체의 재정자립도를 아는가?",
       "category": "job",
       "region": null,
@@ -30603,7 +31454,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02737",
+      "id": "q02814",
       "text": "지방세와 국세의 차이는? 지방재정 확충 방안은?",
       "category": "job",
       "region": null,
@@ -30614,7 +31465,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02738",
+      "id": "q02815",
       "text": "지방채란 무엇인가? 지방채 발행에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -30625,7 +31476,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02739",
+      "id": "q02816",
       "text": "자치경찰제의 개념과 장단점을 설명해보라.",
       "category": "job",
       "region": null,
@@ -30636,7 +31487,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02740",
+      "id": "q02817",
       "text": "고향사랑기부제에 대해 설명하고 활성화 방안을 제시해보라.",
       "category": "job",
       "region": null,
@@ -30647,7 +31498,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02741",
+      "id": "q02818",
       "text": "지방소멸(인구감소) 문제의 원인과 대응 방안은?",
       "category": "job",
       "region": null,
@@ -30658,7 +31509,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02742",
+      "id": "q02819",
       "text": "인구감소지역 지원 특별법, 생활인구 개념에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -30669,7 +31520,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02743",
+      "id": "q02820",
       "text": "광역 행정통합(메가시티) 논의에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -30680,7 +31531,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02744",
+      "id": "q02821",
       "text": "특례시 제도에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -30691,7 +31542,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02745",
+      "id": "q02822",
       "text": "우리 시/군/구의 인구, 예산 규모, 시정 비전(슬로건)을 아는가?",
       "category": "job",
       "region": null,
@@ -30702,7 +31553,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02746",
+      "id": "q02823",
       "text": "우리 지역의 현안(문제점)은 무엇이며 어떻게 해결하겠는가?",
       "category": "job",
       "region": null,
@@ -30713,7 +31564,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02747",
+      "id": "q02824",
       "text": "우리 지역의 자랑거리(관광지, 특산물, 축제)를 외지인에게 소개해보라.",
       "category": "job",
       "region": null,
@@ -30724,7 +31575,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02748",
+      "id": "q02825",
       "text": "우리 지역 인구 유출을 막을 방안을 제시해보라.",
       "category": "job",
       "region": null,
@@ -30735,7 +31586,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02749",
+      "id": "q02826",
       "text": "지역 축제 활성화 방안을 말해보라.",
       "category": "job",
       "region": null,
@@ -30746,7 +31597,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02750",
+      "id": "q02827",
       "text": "APEC 정상회의 개최가 지역에 미치는 영향은?",
       "category": "job",
       "region": null,
@@ -30757,7 +31608,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02751",
+      "id": "q02828",
       "text": "지역 신공항 건설에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -30768,7 +31619,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02752",
+      "id": "q02829",
       "text": "주 4.5일제 도입에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -30779,7 +31630,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02753",
+      "id": "q02830",
       "text": "저출산(저출생) 문제의 원인과 지자체 차원의 대책은?",
       "category": "job",
       "region": null,
@@ -30790,7 +31641,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02754",
+      "id": "q02831",
       "text": "고령화 사회에서 지자체가 해야 할 일은?",
       "category": "job",
       "region": null,
@@ -30801,7 +31652,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02755",
+      "id": "q02832",
       "text": "청년 정책 중 알고 있는 것과 개선 방안은?",
       "category": "job",
       "region": null,
@@ -30812,7 +31663,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02756",
+      "id": "q02833",
       "text": "최근 관심 있게 본 우리 지자체의 정책은 무엇인가?",
       "category": "job",
       "region": null,
@@ -30823,7 +31674,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02757",
+      "id": "q02834",
       "text": "공익근무요원(사회복무요원)이 허가받지 않은 아르바이트를 하다 적발됐다. 생계곤란을 주장했으나 조사 결과 생계곤란 수준은 아니었다. 담당자로서 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -30834,7 +31685,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02758",
+      "id": "q02835",
       "text": "상사가 규정(법령)에 어긋나는 업무 처리를 지시한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30845,7 +31696,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02759",
+      "id": "q02836",
       "text": "민원인이 규정상 불가능한 민원을 계속 요구하며 사무실에서 소란을 피운다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -30856,7 +31707,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02760",
+      "id": "q02837",
       "text": "같은 내용의 민원을 반복 제기하는 악성 민원인이 폭언을 한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30867,7 +31718,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02761",
+      "id": "q02838",
       "text": "민원인이 처리 지연에 항의하며 상급기관에 감사 청구를 하겠다고 한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30878,7 +31729,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02762",
+      "id": "q02839",
       "text": "규정을 엄격히 적용하면 주민에게 큰 불이익이 생기고, 융통성을 발휘하면 규정 위반 소지가 있다. 어떻게 판단하겠는가? (적극행정 vs 법령준수 딜레마)",
       "category": "job",
       "region": null,
@@ -30889,7 +31740,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02763",
+      "id": "q02840",
       "text": "본인 업무가 아닌 일을 상사가 계속 맡긴다. 업무가 과중된 상황에서 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30900,7 +31751,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02764",
+      "id": "q02841",
       "text": "업무 분장을 두고 동료와 갈등이 생겼다. 어떻게 해결하겠는가?",
       "category": "job",
       "region": null,
@@ -30911,7 +31762,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02765",
+      "id": "q02842",
       "text": "상사와 업무 방식에 대한 의견이 충돌한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30922,7 +31773,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02766",
+      "id": "q02843",
       "text": "금요일 퇴근 직전 상사가 월요일까지 끝내야 할 긴급 업무를 지시했다. 선약이 있다면 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30933,7 +31784,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02767",
+      "id": "q02844",
       "text": "재난(폭우·폭설) 비상근무 소집이 걸렸는데 중요한 개인 일정이 있다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30944,7 +31795,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02768",
+      "id": "q02845",
       "text": "담당 사업에서 보조금 부정수급 정황을 발견했다. 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -30955,7 +31806,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02769",
+      "id": "q02846",
       "text": "민원인이 감사 표시로 음료수(선물)를 두고 갔다. 어떻게 하겠는가? (청렴 딜레마)",
       "category": "job",
       "region": null,
@@ -30966,7 +31817,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02770",
+      "id": "q02847",
       "text": "동료(선배)의 비위(금품수수, 근무지 이탈)를 목격했다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30977,7 +31828,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02771",
+      "id": "q02848",
       "text": "지인이 본인 담당 인허가 업무에 편의를 부탁한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -30988,7 +31839,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02772",
+      "id": "q02849",
       "text": "제3자가 특정인의 주소·연락처 등 개인정보를 알려 달라고 요구한다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -30999,7 +31850,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02773",
+      "id": "q02850",
       "text": "언론에 우리 기관 관련 잘못된 보도가 나갔다. 담당자로서 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31010,7 +31861,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02774",
+      "id": "q02851",
       "text": "지역 축제 진행 중 안전사고 우려(인파 밀집)가 제기됐다. 담당자로서 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31021,7 +31872,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02775",
+      "id": "q02852",
       "text": "예산이 부족한데 주민들이 숙원사업 추진을 강하게 요구한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31032,7 +31883,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02776",
+      "id": "q02853",
       "text": "두 주민 집단(예: 시설 유치 찬성/반대)의 이해가 첨예하게 대립한다. 담당자로서 어떻게 조정하겠는가? (님비/핌피 갈등)",
       "category": "job",
       "region": null,
@@ -31043,7 +31894,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02777",
+      "id": "q02854",
       "text": "상사가 회식·사적 모임 참석을 강요한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31054,7 +31905,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02778",
+      "id": "q02855",
       "text": "신규 사업 아이디어를 냈는데 상사가 전례가 없다며 반대한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31065,7 +31916,7 @@
       "source_file": "data/04-jobs/일반행정직.md"
     },
     {
-      "id": "q02779",
+      "id": "q02856",
       "text": "전기직 공무원이 하는 일이 무엇이라고 알고 있는가?",
       "category": "job",
       "region": null,
@@ -31076,7 +31927,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02780",
+      "id": "q02857",
       "text": "전기직렬에 왜 지원하였는가? 민간 기업(한전·공기업) 대신 공무원을 선택한 이유는?",
       "category": "job",
       "region": null,
@@ -31087,7 +31938,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02781",
+      "id": "q02858",
       "text": "전기 전공 지식을 공직(우리 시·군)에서 어떻게 활용할 수 있는가?",
       "category": "job",
       "region": null,
@@ -31098,7 +31949,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02782",
+      "id": "q02859",
       "text": "어떤 부서(가로등·청사관리·상수도·지하철 등)에서 일하고 싶은가?",
       "category": "job",
       "region": null,
@@ -31109,7 +31960,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02783",
+      "id": "q02860",
       "text": "전기기사·전기산업기사·전기공사기사 자격증 취득 과정에서 배운 것은?",
       "category": "job",
       "region": null,
@@ -31120,7 +31971,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02784",
+      "id": "q02861",
       "text": "태양광(신재생) 관련해 전공·경험이 있다고 했는데 구체적으로 무엇을 했는가?",
       "category": "job",
       "region": null,
@@ -31131,7 +31982,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02785",
+      "id": "q02862",
       "text": "전공 분야 중 자신 있는 '필살기' 분야를 하나 설명해보라.",
       "category": "job",
       "region": null,
@@ -31142,7 +31993,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02786",
+      "id": "q02863",
       "text": "최근 전기 분야 이슈(전기차 화재, ESS 화재, 데이터센터 정전, 전기요금, 출력제한 등)를 아는가?",
       "category": "job",
       "region": null,
@@ -31153,7 +32004,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02787",
+      "id": "q02864",
       "text": "우리 지자체에서 추진 중인 전기 관련 사업(스마트 가로등, 태양광 보급 등)을 아는가?",
       "category": "job",
       "region": null,
@@ -31164,7 +32015,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02788",
+      "id": "q02865",
       "text": "전기설비기술기준과 한국전기설비규정(KEC)의 관계를 설명해보라.",
       "category": "job",
       "region": null,
@@ -31175,7 +32026,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02789",
+      "id": "q02866",
       "text": "KEC 도입으로 접지 체계가 어떻게 바뀌었는가?(1~3종 접지 폐지 → 국제표준 방식)",
       "category": "job",
       "region": null,
@@ -31186,7 +32037,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02790",
+      "id": "q02867",
       "text": "전압의 구분(저압·고압·특고압) 기준을 말해보라.(KEC 개정 기준: 저압 AC 1kV·DC 1.5kV 이하)",
       "category": "job",
       "region": null,
@@ -31197,7 +32048,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02791",
+      "id": "q02868",
       "text": "계통접지 방식(TN-S, TN-C, TN-C-S, TT, IT)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31208,7 +32059,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02792",
+      "id": "q02869",
       "text": "단독접지·공통접지·통합접지의 차이는?",
       "category": "job",
       "region": null,
@@ -31219,7 +32070,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02793",
+      "id": "q02870",
       "text": "전선 색상 표시(L1 갈색, L2 흑색, L3 회색, N 청색, PE 녹황색)를 아는가?",
       "category": "job",
       "region": null,
@@ -31230,7 +32081,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02794",
+      "id": "q02871",
       "text": "절연저항 측정 기준(저압 전로: 500V 메거, 1MΩ 이상 등)을 아는가?",
       "category": "job",
       "region": null,
@@ -31241,7 +32092,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02795",
+      "id": "q02872",
       "text": "누전차단기(ELB)의 동작 원리와 설치 의무 장소는?",
       "category": "job",
       "region": null,
@@ -31252,7 +32103,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02796",
+      "id": "q02873",
       "text": "SPD(서지보호장치)의 역할은 무엇인가?",
       "category": "job",
       "region": null,
@@ -31263,7 +32114,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02797",
+      "id": "q02874",
       "text": "수변전설비란 무엇인가? 구성 기기(LBS, PF, MOF, PT, CT, VCB, 변압기, 콘덴서)를 순서대로 설명해보라.",
       "category": "job",
       "region": null,
@@ -31274,7 +32125,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02798",
+      "id": "q02875",
       "text": "변압기의 원리(전자유도)와 결선 방식(Δ-Y 등)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31285,7 +32136,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02799",
+      "id": "q02876",
       "text": "변압기 용량 선정 시 고려사항(수용률·부하율·부등률)은?",
       "category": "job",
       "region": null,
@@ -31296,7 +32147,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02800",
+      "id": "q02877",
       "text": "차단기(CB)와 단로기(DS), 개폐기의 차이는? 조작 순서는?",
       "category": "job",
       "region": null,
@@ -31307,7 +32158,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02801",
+      "id": "q02878",
       "text": "VCB(진공차단기)와 ACB(기중차단기)의 차이와 사용 위치는?",
       "category": "job",
       "region": null,
@@ -31318,7 +32169,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02802",
+      "id": "q02879",
       "text": "보호계전기의 종류(과전류 OCR, 지락 OCGR, 부족전압 UVR 등)와 역할은?",
       "category": "job",
       "region": null,
@@ -31329,7 +32180,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02803",
+      "id": "q02880",
       "text": "피뢰기(LA)의 역할, 설치 장소, 구비 조건은?",
       "category": "job",
       "region": null,
@@ -31340,7 +32191,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02804",
+      "id": "q02881",
       "text": "피뢰기와 피뢰침(피뢰설비)의 차이는?",
       "category": "job",
       "region": null,
@@ -31351,7 +32202,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02805",
+      "id": "q02882",
       "text": "역률이란 무엇인가? 역률 개선이 왜 필요하고 어떻게 하는가?(전력용 콘덴서)",
       "category": "job",
       "region": null,
@@ -31362,7 +32213,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02806",
+      "id": "q02883",
       "text": "중성점 접지의 목적과 접지 방식(직접·저항·소호리액터)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31373,7 +32224,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02807",
+      "id": "q02884",
       "text": "단락과 지락의 차이는? 단락전류 계산(%Z법)을 아는가?",
       "category": "job",
       "region": null,
@@ -31384,7 +32235,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02808",
+      "id": "q02885",
       "text": "코로나 현상, 페란티 현상, 플리커 현상을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31395,7 +32246,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02809",
+      "id": "q02886",
       "text": "3상 유도전동기의 기동 방식(직입, Y-Δ, 리액터, 인버터)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31406,7 +32257,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02810",
+      "id": "q02887",
       "text": "전동기 소손(과열) 원인과 보호 장치(EOCR·THR)는?",
       "category": "job",
       "region": null,
@@ -31417,7 +32268,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02811",
+      "id": "q02888",
       "text": "고조파의 발생 원인과 피해, 저감 대책은?",
       "category": "job",
       "region": null,
@@ -31428,7 +32279,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02812",
+      "id": "q02889",
       "text": "접지의 목적을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31439,7 +32290,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02813",
+      "id": "q02890",
       "text": "감전 사고의 위험 요소(전류 크기, 통전 시간, 경로)와 예방 대책은?",
       "category": "job",
       "region": null,
@@ -31450,7 +32301,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02814",
+      "id": "q02891",
       "text": "정전작업 5대 안전수칙(작업 전 차단, 검전, 접지, 잠금표시, 재확인)을 말해보라.",
       "category": "job",
       "region": null,
@@ -31461,7 +32312,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02815",
+      "id": "q02892",
       "text": "활선 작업이 원칙적으로 금지되는 이유와 부득이한 경우의 조치(절연장구, 이격거리)는?",
       "category": "job",
       "region": null,
@@ -31472,7 +32323,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02816",
+      "id": "q02893",
       "text": "전기화재의 원인(누전, 과부하, 단락, 접촉불량, 트래킹)과 예방 대책은?",
       "category": "job",
       "region": null,
@@ -31483,7 +32334,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02817",
+      "id": "q02894",
       "text": "아크차단기(AFCI)를 아는가?",
       "category": "job",
       "region": null,
@@ -31494,7 +32345,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02818",
+      "id": "q02895",
       "text": "접지저항 저감 방법(접지봉 병렬, 심타공법, 저감제)을 말해보라.",
       "category": "job",
       "region": null,
@@ -31505,7 +32356,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02819",
+      "id": "q02896",
       "text": "검전기와 절연저항계(메거)의 사용법을 아는가?",
       "category": "job",
       "region": null,
@@ -31516,7 +32367,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02820",
+      "id": "q02897",
       "text": "전기설비 열화 진단 방법(적외선 열화상, 절연저항, 부분방전 측정)을 아는가?",
       "category": "job",
       "region": null,
@@ -31527,7 +32378,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02821",
+      "id": "q02898",
       "text": "청사(공공시설)에서 정전이 발생했다. 원인 파악과 복구 절차를 말해보라.",
       "category": "job",
       "region": null,
@@ -31538,7 +32389,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02822",
+      "id": "q02899",
       "text": "한전측 정전(수전측)과 구내 정전을 어떻게 구분하는가?",
       "category": "job",
       "region": null,
@@ -31549,7 +32400,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02823",
+      "id": "q02900",
       "text": "비상발전기의 역할과 점검 항목(연료, 배터리, 무부하·부하 시운전)은?",
       "category": "job",
       "region": null,
@@ -31560,7 +32411,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02824",
+      "id": "q02901",
       "text": "UPS(무정전전원장치)의 원리와 용도는? 비상발전기와의 차이는?",
       "category": "job",
       "region": null,
@@ -31571,7 +32422,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02825",
+      "id": "q02902",
       "text": "ATS(자동절체스위치)의 역할은?",
       "category": "job",
       "region": null,
@@ -31582,7 +32433,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02826",
+      "id": "q02903",
       "text": "정전 시 승강기에 사람이 갇혔다면 어떤 순서로 조치하는가?",
       "category": "job",
       "region": null,
@@ -31593,7 +32444,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02827",
+      "id": "q02904",
       "text": "블랙아웃(대규모 정전)과 순환단전에 대해 아는가? 여름철 전력수급 대책은?",
       "category": "job",
       "region": null,
@@ -31604,7 +32455,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02828",
+      "id": "q02905",
       "text": "폭우·태풍 시 가로등·배전반 침수로 인한 감전 사고를 예방하려면 어떻게 해야 하는가?",
       "category": "job",
       "region": null,
@@ -31615,7 +32466,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02829",
+      "id": "q02906",
       "text": "가로등 관리 업무의 흐름(민원 접수 → 현장 확인 → 업체 수리 → 결과 통보)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31626,7 +32477,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02830",
+      "id": "q02907",
       "text": "LED 조명의 장점과 기존 나트륨등 대비 교체 효과는?",
       "category": "job",
       "region": null,
@@ -31637,7 +32488,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02831",
+      "id": "q02908",
       "text": "가로등 누전으로 인한 감전 사고 예방 대책(누전차단기, 접지, 침수 시 차단)은?",
       "category": "job",
       "region": null,
@@ -31648,7 +32499,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02832",
+      "id": "q02909",
       "text": "조도·휘도의 차이와 도로 조명 설계 기준(KS A 3701)을 아는가?",
       "category": "job",
       "region": null,
@@ -31659,7 +32510,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02833",
+      "id": "q02910",
       "text": "스마트 가로등(원격 점멸, 디밍, IoT)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -31670,7 +32521,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02834",
+      "id": "q02911",
       "text": "터널 조명의 특징(경계부·이행부·기본부, 플리커 방지)을 아는가?",
       "category": "job",
       "region": null,
@@ -31681,7 +32532,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02835",
+      "id": "q02912",
       "text": "빛공해(인공조명에 의한 빛공해 방지법)와 경관조명 민원에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -31692,7 +32543,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02836",
+      "id": "q02913",
       "text": "가로등 점멸 방식(자동점멸기, 원격제어)의 종류는?",
       "category": "job",
       "region": null,
@@ -31703,7 +32554,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02837",
+      "id": "q02914",
       "text": "태양광 발전의 원리와 구성 요소(태양전지 모듈, 인버터, 접속반)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -31714,7 +32565,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02838",
+      "id": "q02915",
       "text": "태양광 인버터의 역할은?(직류→교류 변환, MPPT)",
       "category": "job",
       "region": null,
@@ -31725,7 +32576,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02839",
+      "id": "q02916",
       "text": "공공기관 신재생에너지 설치 의무화 제도를 아는가?",
       "category": "job",
       "region": null,
@@ -31736,7 +32587,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02840",
+      "id": "q02917",
       "text": "ESS(에너지저장장치)의 역할과 화재 사고 예방 대책은?",
       "category": "job",
       "region": null,
@@ -31747,7 +32598,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02841",
+      "id": "q02918",
       "text": "RPS(신재생에너지 공급의무화)와 RE100에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -31758,7 +32609,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02842",
+      "id": "q02919",
       "text": "태양광 출력제한(Curtailment)이 왜 발생하는가?",
       "category": "job",
       "region": null,
@@ -31769,7 +32620,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02843",
+      "id": "q02920",
       "text": "연료전지·풍력·소수력 발전의 원리를 간단히 설명해보라.",
       "category": "job",
       "region": null,
@@ -31780,7 +32631,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02844",
+      "id": "q02921",
       "text": "스마트그리드·AMI(지능형 검침)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -31791,7 +32642,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02845",
+      "id": "q02922",
       "text": "전기차 충전시설(완속·급속) 의무 설치와 전기차 화재 대응 이슈를 아는가?",
       "category": "job",
       "region": null,
@@ -31802,7 +32653,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02846",
+      "id": "q02923",
       "text": "공공시설 전기에너지 절약 방안을 전기직 관점에서 제시해보라.(고효율기기, 대기전력, 역률 관리, BEMS)",
       "category": "job",
       "region": null,
@@ -31813,7 +32664,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02847",
+      "id": "q02924",
       "text": "전기안전관리법 제정 취지와 주요 내용(전기안전관리자 선임, 정기검사, 일반용 전기설비 점검)을 아는가?",
       "category": "job",
       "region": null,
@@ -31824,7 +32675,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02848",
+      "id": "q02925",
       "text": "전기안전관리자 선임 기준(용량별)과 대행 제도를 아는가?",
       "category": "job",
       "region": null,
@@ -31835,7 +32686,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02849",
+      "id": "q02926",
       "text": "일반용·자가용·전기사업용 전기설비의 구분을 설명해보라.",
       "category": "job",
       "region": null,
@@ -31846,7 +32697,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02850",
+      "id": "q02927",
       "text": "전기설비 정기검사(한국전기안전공사)의 주기와 대상을 아는가?",
       "category": "job",
       "region": null,
@@ -31857,7 +32708,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02851",
+      "id": "q02928",
       "text": "전기공사업법상 전기공사 분리발주 원칙을 아는가?",
       "category": "job",
       "region": null,
@@ -31868,7 +32719,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02852",
+      "id": "q02929",
       "text": "전기공사 감독(감리) 시 확인해야 할 사항은?",
       "category": "job",
       "region": null,
@@ -31879,7 +32730,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02853",
+      "id": "q02930",
       "text": "태양광 설비 20kW 초과 시 전기안전관리자 선임 대상이 되는 것을 아는가?",
       "category": "job",
       "region": null,
@@ -31890,7 +32741,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02854",
+      "id": "q02931",
       "text": "중대재해처벌법이 전기설비 관리 업무에 미치는 영향은?",
       "category": "job",
       "region": null,
@@ -31901,7 +32752,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02855",
+      "id": "q02932",
       "text": "산업안전보건법상 전기 작업 관련 규정(정전작업, 절연용 보호구)을 아는가?",
       "category": "job",
       "region": null,
@@ -31912,7 +32763,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02856",
+      "id": "q02933",
       "text": "한여름 폭염에 청사 전체가 정전됐다. 담당자로서 대응 순서(원인 파악, 비상발전, 한전·업체 연락, 상황 보고, 이용자 안내)를 말해보라.",
       "category": "job",
       "region": null,
@@ -31923,7 +32774,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02857",
+      "id": "q02934",
       "text": "야간에 관내 가로등 수십 개가 동시에 꺼졌다는 민원이 폭주한다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -31934,7 +32785,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02858",
+      "id": "q02935",
       "text": "정기 안전점검 중 수변전실 변압기에서 이상 소음·과열 징후를 발견했다. 교체 예산이 없는 상황에서 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31945,7 +32796,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02859",
+      "id": "q02936",
       "text": "전기공사 감독 중 시공사가 설계와 다른 저가 자재(전선·차단기)를 사용한 것을 발견했다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31956,7 +32807,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02860",
+      "id": "q02937",
       "text": "전기안전공사 정기검사에서 부적합 판정을 받았는데 시설 운영 부서가 운영 중단은 곤란하다고 한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -31967,7 +32818,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02861",
+      "id": "q02938",
       "text": "태풍·폭우로 지하 전기실이 침수될 우려가 있다. 사전·사후 조치를 말해보라.",
       "category": "job",
       "region": null,
@@ -31978,7 +32829,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02862",
+      "id": "q02939",
       "text": "주민이 집 앞 가로등이 너무 밝아 잠을 잘 수 없다고 민원을 제기했는데, 옆집 주민은 어두우면 위험하다며 반대한다. 어떻게 조정하겠는가?",
       "category": "job",
       "region": null,
@@ -31989,7 +32840,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02863",
+      "id": "q02940",
       "text": "태양광 발전소 설치 사업에 대해 주민들이 전자파·경관 훼손을 이유로 반대한다. 어떻게 설득하겠는가?",
       "category": "job",
       "region": null,
@@ -32000,7 +32851,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02864",
+      "id": "q02941",
       "text": "상급자가 예산 부족을 이유로 법정 정기검사(안전점검)를 미루자고 한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32011,7 +32862,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02865",
+      "id": "q02942",
       "text": "외주 유지보수 업체가 가로등 점검을 부실하게 하는 정황을 발견했다. 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -32022,7 +32873,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02866",
+      "id": "q02943",
       "text": "급한 복구를 위해 정전 절차(차단·검전·접지) 없이 작업하라는 지시를 받았다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32033,7 +32884,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02867",
+      "id": "q02944",
       "text": "승강기 정전 갇힘 사고가 발생해 이용자가 강하게 항의한다. 현장 조치와 재발 방지 대책을 말해보라.",
       "category": "job",
       "region": null,
@@ -32044,7 +32895,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02868",
+      "id": "q02945",
       "text": "축제 행사장 임시 전기설비(임시 분전반·전선)가 우천 속에 노출되어 있다. 행사 주최측은 강행을 원한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32055,7 +32906,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02869",
+      "id": "q02946",
       "text": "야간 당직 중 하수처리장(정수장) 수배전반 이상 경보가 울렸다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -32066,7 +32917,7 @@
       "source_file": "data/04-jobs/전기직.md"
     },
     {
-      "id": "q02870",
+      "id": "q02947",
       "text": "전산직에 지원한 이유는 무엇인가? 민간 IT기업이 아닌 공직을 택한 이유는?",
       "category": "job",
       "region": null,
@@ -32077,7 +32928,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02871",
+      "id": "q02948",
       "text": "사용할 수 있는 프로그래밍 언어는 무엇인가? 개발 경험(프로젝트)을 말해보라.",
       "category": "job",
       "region": null,
@@ -32088,7 +32939,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02872",
+      "id": "q02949",
       "text": "보유한 자격증(정보처리기사, 정보보안기사 등)과 준비 과정을 말해보라.",
       "category": "job",
       "region": null,
@@ -32099,7 +32950,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02873",
+      "id": "q02950",
       "text": "전공(비전공)인데 전산 역량을 어떻게 쌓았는가? 전공 지식을 공직에서 어떻게 활용하겠는가?",
       "category": "job",
       "region": null,
@@ -32110,7 +32961,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02874",
+      "id": "q02951",
       "text": "전산직 공무원이 하는 일이 무엇이라고 알고 있는가? (개발보다 사업관리·운영 중심임을 아는지)",
       "category": "job",
       "region": null,
@@ -32121,7 +32972,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02875",
+      "id": "q02952",
       "text": "개발 업무가 거의 없고 외주 관리·문서 업무가 많은데 괜찮은가?",
       "category": "job",
       "region": null,
@@ -32132,7 +32983,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02876",
+      "id": "q02953",
       "text": "최근 관심 있게 본 IT 기술(트렌드)은 무엇이고 행정에 어떻게 접목하겠는가?",
       "category": "job",
       "region": null,
@@ -32143,7 +32994,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02877",
+      "id": "q02954",
       "text": "데이터베이스란 무엇인가? DBMS의 역할과 종류를 말해보라.",
       "category": "job",
       "region": null,
@@ -32154,7 +33005,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02878",
+      "id": "q02955",
       "text": "정규화란 무엇이며 왜 하는가? 반정규화는 언제 필요한가?",
       "category": "job",
       "region": null,
@@ -32165,7 +33016,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02879",
+      "id": "q02956",
       "text": "트랜잭션의 특성(ACID)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32176,7 +33027,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02880",
+      "id": "q02957",
       "text": "기본키와 외래키의 차이는? 무결성 제약조건의 종류는?",
       "category": "job",
       "region": null,
@@ -32187,7 +33038,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02881",
+      "id": "q02958",
       "text": "인덱스란 무엇인가? 장단점은?",
       "category": "job",
       "region": null,
@@ -32198,7 +33049,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02882",
+      "id": "q02959",
       "text": "SQL과 NoSQL의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32209,7 +33060,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02883",
+      "id": "q02960",
       "text": "데이터 백업 방식(전체·증분·차등 백업)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32220,7 +33071,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02884",
+      "id": "q02961",
       "text": "객체지향 프로그래밍의 특징(캡슐화, 상속, 다형성, 추상화)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32231,7 +33082,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02885",
+      "id": "q02962",
       "text": "자료구조에서 스택과 큐의 차이는?",
       "category": "job",
       "region": null,
@@ -32242,7 +33093,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02886",
+      "id": "q02963",
       "text": "형상관리(버전관리)란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32253,7 +33104,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02887",
+      "id": "q02964",
       "text": "OSI 7계층을 설명해보라. TCP/IP 4계층과의 관계는?",
       "category": "job",
       "region": null,
@@ -32264,7 +33115,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02888",
+      "id": "q02965",
       "text": "TCP와 UDP의 차이는 무엇인가?",
       "category": "job",
       "region": null,
@@ -32275,7 +33126,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02889",
+      "id": "q02966",
       "text": "HTTP와 HTTPS의 차이는? SSL/TLS란?",
       "category": "job",
       "region": null,
@@ -32286,7 +33137,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02890",
+      "id": "q02967",
       "text": "DNS의 동작 원리를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32297,7 +33148,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02891",
+      "id": "q02968",
       "text": "IP 주소(IPv4/IPv6), 서브넷, DHCP에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -32308,7 +33159,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02892",
+      "id": "q02969",
       "text": "웹 브라우저에 URL을 입력했을 때 일어나는 과정을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32319,7 +33170,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02893",
+      "id": "q02970",
       "text": "서버 이중화(로드밸런싱, 클러스터링)가 왜 필요한가?",
       "category": "job",
       "region": null,
@@ -32330,7 +33181,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02894",
+      "id": "q02971",
       "text": "가상화란 무엇인가? 클라우드 컴퓨팅의 서비스 유형(IaaS/PaaS/SaaS)을 구분해보라.",
       "category": "job",
       "region": null,
@@ -32341,7 +33192,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02895",
+      "id": "q02972",
       "text": "공공부문 클라우드 전환(클라우드 네이티브) 정책에 대해 아는가? G-클라우드란?",
       "category": "job",
       "region": null,
@@ -32352,7 +33203,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02896",
+      "id": "q02973",
       "text": "재해복구(DR) 시스템, BCP란 무엇인가? 국가정보자원관리원 장애(화재) 사례에서 얻을 교훈은?",
       "category": "job",
       "region": null,
@@ -32363,7 +33214,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02897",
+      "id": "q02974",
       "text": "정보보안의 3요소(기밀성, 무결성, 가용성)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32374,7 +33225,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02898",
+      "id": "q02975",
       "text": "대칭키 암호화와 비대칭키(공개키) 암호화의 차이는? 각각 예를 들어보라.",
       "category": "job",
       "region": null,
@@ -32385,7 +33236,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02899",
+      "id": "q02976",
       "text": "해시 함수란 무엇인가? 암호화와의 차이는?",
       "category": "job",
       "region": null,
@@ -32396,7 +33247,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02900",
+      "id": "q02977",
       "text": "전자서명의 원리와 공동인증서(구 공인인증서)에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -32407,7 +33258,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02901",
+      "id": "q02978",
       "text": "방화벽, IDS, IPS의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32418,7 +33269,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02902",
+      "id": "q02979",
       "text": "DDoS 공격이란 무엇이며 어떻게 대응하는가?",
       "category": "job",
       "region": null,
@@ -32429,7 +33280,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02903",
+      "id": "q02980",
       "text": "랜섬웨어란 무엇인가? 감염 예방과 감염 시 대응 방법은?",
       "category": "job",
       "region": null,
@@ -32440,7 +33291,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02904",
+      "id": "q02981",
       "text": "피싱·스미싱·파밍의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32451,7 +33302,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02905",
+      "id": "q02982",
       "text": "SQL 인젝션, XSS(크로스사이트 스크립팅) 공격과 방어 방법을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32462,7 +33313,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02906",
+      "id": "q02983",
       "text": "제로데이 공격이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32473,7 +33324,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02907",
+      "id": "q02984",
       "text": "공공기관 망분리(내부망/인터넷망)란 무엇인가? 물리적/논리적 망분리의 차이와 완화(N2SF) 논의에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -32484,7 +33335,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02908",
+      "id": "q02985",
       "text": "제로트러스트 보안 모델이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32495,7 +33346,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02909",
+      "id": "q02986",
       "text": "ISMS-P 인증이 무엇인지 아는가?",
       "category": "job",
       "region": null,
@@ -32506,7 +33357,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02910",
+      "id": "q02987",
       "text": "CSAP(클라우드 보안인증)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -32517,7 +33368,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02911",
+      "id": "q02988",
       "text": "보안 사고의 원인 중 기술적 요인과 인적 요인 중 무엇이 더 중요하다고 보는가? 내부자 보안 위협 대응은?",
       "category": "job",
       "region": null,
@@ -32528,7 +33379,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02912",
+      "id": "q02989",
       "text": "사이버 공격(해킹) 시도가 공공기관에 집중되는 이유와 대응 체계(국가사이버안보센터 등)를 아는가?",
       "category": "job",
       "region": null,
@@ -32539,7 +33390,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02913",
+      "id": "q02990",
       "text": "개인정보의 정의는 무엇인가? 가명정보·익명정보와의 차이는?",
       "category": "job",
       "region": null,
@@ -32550,7 +33401,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02914",
+      "id": "q02991",
       "text": "개인정보보호법상 개인정보 처리 원칙(수집 최소화, 목적 제한 등)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -32561,7 +33412,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02915",
+      "id": "q02992",
       "text": "개인정보 유출 사고 발생 시 기관이 해야 할 조치(신고·통지 의무)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32572,7 +33423,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02916",
+      "id": "q02993",
       "text": "개인정보 영향평가란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32583,7 +33434,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02917",
+      "id": "q02994",
       "text": "주민등록번호 처리 제한에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -32594,7 +33445,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02918",
+      "id": "q02995",
       "text": "마이데이터(본인정보 전송요구권)란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32605,7 +33456,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02919",
+      "id": "q02996",
       "text": "전자정부법의 목적과 전자정부 서비스(정부24, 국민비서 등)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -32616,7 +33467,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02920",
+      "id": "q02997",
       "text": "디지털플랫폼정부란 무엇인가? 기존 전자정부와의 차이는?",
       "category": "job",
       "region": null,
@@ -32627,7 +33478,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02921",
+      "id": "q02998",
       "text": "행정정보 공동이용 제도란 무엇인가? (구비서류 제로화)",
       "category": "job",
       "region": null,
@@ -32638,7 +33489,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02922",
+      "id": "q02999",
       "text": "공공데이터 개방의 의의와 활용 사례를 말해보라. (공공데이터법)",
       "category": "job",
       "region": null,
@@ -32649,7 +33500,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02923",
+      "id": "q03000",
       "text": "데이터기반행정 활성화에 관한 법률에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -32660,7 +33511,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02924",
+      "id": "q03001",
       "text": "웹 접근성이란 무엇인가? 공공기관 홈페이지에 왜 중요한가?",
       "category": "job",
       "region": null,
@@ -32671,7 +33522,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02925",
+      "id": "q03002",
       "text": "정보시스템 감리란 무엇인가? 어떤 사업에 의무인가?",
       "category": "job",
       "region": null,
@@ -32682,7 +33533,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02926",
+      "id": "q03003",
       "text": "SW사업 대가산정, 제안요청서(RFP)가 무엇인지 아는가? 외주업체 관리에서 중요한 점은?",
       "category": "job",
       "region": null,
@@ -32693,7 +33544,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02927",
+      "id": "q03004",
       "text": "유지보수 계약의 SLA(서비스 수준 협약)란 무엇인가?",
       "category": "job",
       "region": null,
@@ -32704,7 +33555,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02928",
+      "id": "q03005",
       "text": "공공 SW사업의 대기업 참여제한 제도에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -32715,7 +33566,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02929",
+      "id": "q03006",
       "text": "AI(생성형 AI)를 행정에 도입할 때의 활용 방안과 위험(개인정보, 환각, 책임소재)은?",
       "category": "job",
       "region": null,
@@ -32726,7 +33577,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02930",
+      "id": "q03007",
       "text": "AI 기본법(인공지능 발전과 신뢰 기반 조성 등에 관한 법률)에 대해 들어봤는가?",
       "category": "job",
       "region": null,
@@ -32737,7 +33588,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02931",
+      "id": "q03008",
       "text": "RPA(업무자동화)를 적용할 만한 행정업무를 제안해보라.",
       "category": "job",
       "region": null,
@@ -32748,7 +33599,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02932",
+      "id": "q03009",
       "text": "빅데이터를 활용한 지자체 정책 사례를 아는가? (상권분석, 버스노선 최적화 등)",
       "category": "job",
       "region": null,
@@ -32759,7 +33610,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02933",
+      "id": "q03010",
       "text": "스마트시티란 무엇인가? 우리 지역에 적용한다면 어떤 서비스를 하고 싶은가?",
       "category": "job",
       "region": null,
@@ -32770,7 +33621,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02934",
+      "id": "q03011",
       "text": "디지털 격차(정보 소외계층) 해소를 위한 방안을 제시해보라.",
       "category": "job",
       "region": null,
@@ -32781,7 +33632,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02935",
+      "id": "q03012",
       "text": "노후(레거시) 정보시스템의 문제점과 개편 시 고려사항은?",
       "category": "job",
       "region": null,
@@ -32792,7 +33643,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02936",
+      "id": "q03013",
       "text": "지자체 홈페이지의 개선점을 제안해보라.",
       "category": "job",
       "region": null,
@@ -32803,7 +33654,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02937",
+      "id": "q03014",
       "text": "민원 서비스 시스템에 장애가 발생해 업무가 마비됐는데 원인 파악이 안 된다. 담당자로서 어떤 순서로 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -32814,7 +33665,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02938",
+      "id": "q03015",
       "text": "야간(주말)에 시스템 장애 연락을 받았다. 중요한 개인 일정이 있다면 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32825,7 +33676,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02939",
+      "id": "q03016",
       "text": "개인정보 유출 사고가 발생했다. 초동 대응부터 후속 조치까지 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32836,7 +33687,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02940",
+      "id": "q03017",
       "text": "홈페이지가 해킹(변조)당한 것을 발견했다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -32847,7 +33698,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02941",
+      "id": "q03018",
       "text": "내부 PC가 랜섬웨어에 감염된 것을 발견했다. 어떻게 조치하겠는가?",
       "category": "job",
       "region": null,
@@ -32858,7 +33709,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02942",
+      "id": "q03019",
       "text": "현업 부서(상사)가 업무 편의를 위해 보안 규정 예외(USB 사용, 망분리 우회, 자료 반출)를 요구한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32869,7 +33720,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02943",
+      "id": "q03020",
       "text": "상사가 보안성 검토가 끝나지 않은 상용 프로그램(무료 SW) 설치·도입을 지시한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32880,7 +33731,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02944",
+      "id": "q03021",
       "text": "외주업체가 납기를 지키지 못하거나 산출물 품질이 기준에 못 미친다. 어떻게 관리하겠는가?",
       "category": "job",
       "region": null,
@@ -32891,7 +33742,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02945",
+      "id": "q03022",
       "text": "외주업체 직원이 검수 편의를 봐 달라며 식사 접대를 하려 한다. 어떻게 하겠는가? (청렴)",
       "category": "job",
       "region": null,
@@ -32902,7 +33753,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02946",
+      "id": "q03023",
       "text": "시스템 오픈 직전 심각한 버그를 발견했다. 일정 연기와 강행 사이에서 어떻게 판단하겠는가?",
       "category": "job",
       "region": null,
@@ -32913,7 +33764,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02947",
+      "id": "q03024",
       "text": "데이터 이관 작업 중 일부 데이터 오류(유실)를 발견했다. 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -32924,7 +33775,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02948",
+      "id": "q03025",
       "text": "서버가 노후화됐는데 예산 부서가 교체 예산을 삭감했다. 어떻게 설득하겠는가?",
       "category": "job",
       "region": null,
@@ -32935,7 +33786,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02949",
+      "id": "q03026",
       "text": "비전산직 직원들이 PC 고장 수리 등 단순 잡무를 계속 요청해 본연의 업무에 지장이 있다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32946,7 +33797,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02950",
+      "id": "q03027",
       "text": "현업 부서가 시스템 개편 요구사항을 계속 바꿔 개발 범위가 늘어난다. 어떻게 조정하겠는가?",
       "category": "job",
       "region": null,
@@ -32957,7 +33808,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02951",
+      "id": "q03028",
       "text": "전산 지식이 없는 상사에게 기술적 문제(사업 필요성)를 설명해야 한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32968,7 +33819,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02952",
+      "id": "q03029",
       "text": "직원들이 보안 교육을 형식적으로 여기고 참여하지 않는다. 보안 의식을 높일 방안은?",
       "category": "job",
       "region": null,
@@ -32979,7 +33830,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02953",
+      "id": "q03030",
       "text": "동료 직원이 권한을 남용해 개인정보(주민 정보)를 사적으로 조회하는 것을 알게 됐다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -32990,7 +33841,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02954",
+      "id": "q03031",
       "text": "어르신 민원인이 무인발급기(키오스크) 사용을 어려워한다. 시스템 담당자로서 개선 방안은? (디지털 소외)",
       "category": "job",
       "region": null,
@@ -33001,7 +33852,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02955",
+      "id": "q03032",
       "text": "재난 상황으로 전산실 침수(화재) 위험이 발생했다. 어떻게 대응하겠는가? (DR/백업)",
       "category": "job",
       "region": null,
@@ -33012,7 +33863,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02956",
+      "id": "q03033",
       "text": "챗봇 도입 후 잘못된 답변으로 민원이 발생했다. 담당자로서 어떻게 처리하고 개선하겠는가?",
       "category": "job",
       "region": null,
@@ -33023,7 +33874,7 @@
       "source_file": "data/04-jobs/전산직.md"
     },
     {
-      "id": "q02957",
+      "id": "q03034",
       "text": "토목직 공무원이 하는 일이 무엇이라고 알고 있는가? 어느 부서에서 일하고 싶은가?",
       "category": "job",
       "region": null,
@@ -33034,7 +33885,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02958",
+      "id": "q03035",
       "text": "토목직 공무원으로서 본인이 실무적으로 '진짜 할 수 있는 일'은 무엇인가? (지식이 아닌 실무 능력)",
       "category": "job",
       "region": null,
@@ -33045,7 +33896,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02959",
+      "id": "q03036",
       "text": "민간 건설사가 아닌 공직(토목직)을 선택한 이유는?",
       "category": "job",
       "region": null,
@@ -33056,7 +33907,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02960",
+      "id": "q03037",
       "text": "토목 분야 중 가장 중요하다고 생각하는 분야는 무엇인가? 그 이유는?",
       "category": "job",
       "region": "서울특별시",
@@ -33067,7 +33918,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02961",
+      "id": "q03038",
       "text": "CAD를 다룰 수 있는가? 측량 실습·드론 조종 경험이 있는가?",
       "category": "job",
       "region": null,
@@ -33078,7 +33929,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02962",
+      "id": "q03039",
       "text": "토목기사(산업기사) 자격증 취득 과정에서 무엇을 배웠는가?",
       "category": "job",
       "region": null,
@@ -33089,7 +33940,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02963",
+      "id": "q03040",
       "text": "전공(비전공)인데 토목 지식을 어떻게 쌓았고, 공직에서 어떻게 활용하겠는가?",
       "category": "job",
       "region": null,
@@ -33100,7 +33951,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02964",
+      "id": "q03041",
       "text": "최근 토목·건설 분야 이슈 중 관심 있는 것과 그 원인·대처방안을 말해보라.",
       "category": "job",
       "region": null,
@@ -33111,7 +33962,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02965",
+      "id": "q03042",
       "text": "우리 지역(지자체)의 도로 관리를 어떻게 하겠는가? 노후 도로의 유지관리 방안은?",
       "category": "job",
       "region": "서울특별시",
@@ -33122,7 +33973,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02966",
+      "id": "q03043",
       "text": "포트홀이 생기는 원인과 보수 방법을 설명해보라.",
       "category": "job",
       "region": null,
@@ -33133,7 +33984,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02967",
+      "id": "q03044",
       "text": "아스팔트 포장과 콘크리트 포장의 차이와 장단점은?",
       "category": "job",
       "region": null,
@@ -33144,7 +33995,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02968",
+      "id": "q03045",
       "text": "도로 점용허가란 무엇인가? 무단 점용을 발견하면 어떻게 처리하는가?",
       "category": "job",
       "region": null,
@@ -33155,7 +34006,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02969",
+      "id": "q03046",
       "text": "제설 작업은 어떤 체계로 이루어지는지 아는가? 폭설 시 토목직의 역할은?",
       "category": "job",
       "region": null,
@@ -33166,7 +34017,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02970",
+      "id": "q03047",
       "text": "교량의 안전등급(A~E)과 정밀안전진단에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -33177,7 +34028,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02971",
+      "id": "q03048",
       "text": "도로 확장 공사 시 교통 처리(우회) 계획은 왜 중요한가?",
       "category": "job",
       "region": null,
@@ -33188,7 +34039,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02972",
+      "id": "q03049",
       "text": "집중호우(태풍) 시 토목직 공무원이 해야 할 일은 무엇인가?",
       "category": "job",
       "region": null,
@@ -33199,7 +34050,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02973",
+      "id": "q03050",
       "text": "자연재해(풍수해) 예방책에는 어떤 것이 있는가?",
       "category": "job",
       "region": "서울특별시",
@@ -33210,7 +34061,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02974",
+      "id": "q03051",
       "text": "우리 지역의 상습 침수지역을 아는가? 침수 원인과 대책은?",
       "category": "job",
       "region": null,
@@ -33221,7 +34072,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02975",
+      "id": "q03052",
       "text": "하천 점용허가란 무엇인가? 하천구역 내 불법 경작·시설물은 어떻게 처리하는가?",
       "category": "job",
       "region": null,
@@ -33232,7 +34083,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02976",
+      "id": "q03053",
       "text": "제방의 역할과 파괴(월류·누수·침하) 원인을 설명해보라.",
       "category": "job",
       "region": null,
@@ -33243,7 +34094,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02977",
+      "id": "q03054",
       "text": "우수저류시설, 빗물펌프장의 기능을 설명해보라.",
       "category": "job",
       "region": null,
@@ -33254,7 +34105,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02978",
+      "id": "q03055",
       "text": "계획홍수위·확률강우량 개념을 아는가?",
       "category": "job",
       "region": null,
@@ -33265,7 +34116,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02979",
+      "id": "q03056",
       "text": "소하천과 지방하천, 국가하천의 관리 주체 차이를 아는가?",
       "category": "job",
       "region": null,
@@ -33276,7 +34127,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02980",
+      "id": "q03057",
       "text": "저영향개발(LID) 기법이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -33287,7 +34138,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02981",
+      "id": "q03058",
       "text": "상수도 공급 과정(취수→정수→송수→배수→급수)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -33298,7 +34149,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02982",
+      "id": "q03059",
       "text": "노후 상수관로로 인한 문제(누수·적수)와 대책은?",
       "category": "job",
       "region": null,
@@ -33309,7 +34160,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02983",
+      "id": "q03060",
       "text": "유수율이란 무엇이고 왜 중요한가? 유수율 제고 방안은?",
       "category": "job",
       "region": null,
@@ -33320,7 +34171,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02984",
+      "id": "q03061",
       "text": "하수처리 과정을 간단히 설명해보라. 합류식과 분류식 하수관거의 차이는?",
       "category": "job",
       "region": null,
@@ -33331,7 +34182,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02985",
+      "id": "q03062",
       "text": "싱크홀(지반침하)의 원인과 대책을 말해보라. (지하수 외 상수관 누수, 하수관 파손, 지하 굴착 등)",
       "category": "job",
       "region": null,
@@ -33342,7 +34193,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02986",
+      "id": "q03063",
       "text": "지하안전영향평가 제도를 아는가?",
       "category": "job",
       "region": null,
@@ -33353,7 +34204,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02987",
+      "id": "q03064",
       "text": "물 재이용(중수도, 하수처리수 재이용)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -33364,7 +34215,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02988",
+      "id": "q03065",
       "text": "씽크홀 관련: 지반 함몰과 지반 침하의 차이는?",
       "category": "job",
       "region": null,
@@ -33375,7 +34226,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02989",
+      "id": "q03066",
       "text": "연약지반 개량공법에는 어떤 것이 있는가?",
       "category": "job",
       "region": null,
@@ -33386,7 +34237,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02990",
+      "id": "q03067",
       "text": "옹벽의 종류와 안정 조건(전도·활동·침하)을 설명해보라.",
       "category": "job",
       "region": null,
@@ -33397,7 +34248,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02991",
+      "id": "q03068",
       "text": "콘크리트 양생이란? 서중·한중 콘크리트 시공 시 주의점은?",
       "category": "job",
       "region": null,
@@ -33408,7 +34259,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02992",
+      "id": "q03069",
       "text": "철근콘크리트의 원리(철근과 콘크리트가 같이 쓰이는 이유)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -33419,7 +34270,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02993",
+      "id": "q03070",
       "text": "압밀과 다짐의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -33430,7 +34281,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02994",
+      "id": "q03071",
       "text": "흙막이 공사에서 히빙·보일링 현상이란?",
       "category": "job",
       "region": null,
@@ -33441,7 +34292,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02995",
+      "id": "q03072",
       "text": "공사감독으로서 품질관리·안전관리를 위해 무엇을 확인해야 하는가?",
       "category": "job",
       "region": null,
@@ -33452,7 +34303,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02996",
+      "id": "q03073",
       "text": "설계 변경은 어떤 경우에 가능한가?",
       "category": "job",
       "region": null,
@@ -33463,7 +34314,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02997",
+      "id": "q03074",
       "text": "시방서와 설계도면이 다를 경우 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -33474,7 +34325,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02998",
+      "id": "q03075",
       "text": "지하 매설물(노후 인프라) 관리 정책에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -33485,7 +34336,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q02999",
+      "id": "q03076",
       "text": "스마트 건설기술(BIM, 드론, IoT 계측)에 대해 아는가? 행정에 어떻게 접목하겠는가?",
       "category": "job",
       "region": null,
@@ -33496,7 +34347,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03000",
+      "id": "q03077",
       "text": "중대재해처벌법 시행이 건설 현장에 미친 영향은?",
       "category": "job",
       "region": null,
@@ -33507,7 +34358,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03001",
+      "id": "q03078",
       "text": "최근 발생한 건설사고(붕괴 사고 등)의 원인과 재발 방지 대책을 말해보라.",
       "category": "job",
       "region": null,
@@ -33518,7 +34369,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03002",
+      "id": "q03079",
       "text": "우리 지자체에서 진행 중인 주요 토목·건설 사업을 아는가? 개선점은?",
       "category": "job",
       "region": null,
@@ -33529,7 +34380,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03003",
+      "id": "q03080",
       "text": "공사감독 중 시공사가 설계와 다르게 부실시공한 것을 발견했다. 시공사는 공기 지연과 비용을 이유로 묵인을 요청한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -33540,7 +34391,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03004",
+      "id": "q03081",
       "text": "상급자가 특정 업체에 유리하게 설계 변경을 지시한다. 규정 위반 소지가 있다면 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -33551,7 +34402,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03005",
+      "id": "q03082",
       "text": "집중호우로 도로가 침수되고 주민 대피가 필요한 상황이다. 현장 담당자로서 우선순위와 조치 순서를 말해보라.",
       "category": "job",
       "region": null,
@@ -33562,7 +34413,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03006",
+      "id": "q03083",
       "text": "도로 확장 공사에 대해 인근 주민들이 소음·분진 민원을 집단으로 제기하며 공사 중단을 요구한다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -33573,7 +34424,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03007",
+      "id": "q03084",
       "text": "마을 진입로 포장을 요구하는 민원이 있으나 예산도 없고 사유지가 포함되어 있다. 어떻게 설명하고 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -33584,7 +34435,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03008",
+      "id": "q03085",
       "text": "야간에 관내 도로에서 싱크홀이 발생했다는 신고가 접수됐다. 어떤 순서로 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -33595,7 +34446,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03009",
+      "id": "q03086",
       "text": "준공검사에서 경미한 하자를 발견했는데 시공사가 지역 유력 업체이고 준공 기한이 임박했다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -33606,7 +34457,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03010",
+      "id": "q03087",
       "text": "하천 둔치의 불법 경작을 단속해야 하는데 고령의 주민이 생계를 호소한다. 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -33617,7 +34468,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03011",
+      "id": "q03088",
       "text": "제설 비상근무 중 본인 담당 구간이 아닌 곳에서 사고 위험 신고가 들어왔다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -33628,7 +34479,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03012",
+      "id": "q03089",
       "text": "지역 개발사업(도로 개설)에 반대하는 주민과 찬성하는 주민이 대립한다. 담당자로서 갈등을 어떻게 조정하겠는가?",
       "category": "job",
       "region": null,
@@ -33639,7 +34490,7 @@
       "source_file": "data/04-jobs/토목직.md"
     },
     {
-      "id": "q03013",
+      "id": "q03090",
       "text": "총 70층 건축물의 25층에서 화재 발생 시 인명구조·대피 방안을 발표하라",
       "category": "job",
       "region": null,
@@ -33650,7 +34501,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03014",
+      "id": "q03091",
       "text": "주택용 소방시설(단독경보형 감지기·소화기) 보급을 늘릴 수 있는 방안",
       "category": "job",
       "region": null,
@@ -33661,7 +34512,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03015",
+      "id": "q03092",
       "text": "전기차 화재 현장 대응 방법",
       "category": "job",
       "region": null,
@@ -33672,7 +34523,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03016",
+      "id": "q03093",
       "text": "당신이 소방서장이라면 고층건물 화재 대비 훈련 때 꼭 해야 할 훈련은?",
       "category": "job",
       "region": null,
@@ -33683,7 +34534,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03017",
+      "id": "q03094",
       "text": "소방에서 드론 자격증을 따야 하는 이유는?",
       "category": "job",
       "region": null,
@@ -33694,7 +34545,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03018",
+      "id": "q03095",
       "text": "본인은 리더십형인가, 팔로워형인가?",
       "category": "job",
       "region": null,
@@ -33705,7 +34556,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03019",
+      "id": "q03096",
       "text": "조직생활 내에서 팀에게 피해를 끼친 적이 있는가? 그때 어떻게 대처했는가?",
       "category": "job",
       "region": null,
@@ -33716,7 +34567,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03020",
+      "id": "q03097",
       "text": "단체생활에서 갈등을 겪은 경험과 해결 과정을 말해보라",
       "category": "job",
       "region": null,
@@ -33727,7 +34578,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03021",
+      "id": "q03098",
       "text": "인간관계에서 가장 중요하게 생각하는 것은 무엇인가?",
       "category": "job",
       "region": null,
@@ -33738,7 +34589,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03022",
+      "id": "q03099",
       "text": "공(公)과 사(私)가 충돌한 경험이 있는가?",
       "category": "job",
       "region": null,
@@ -33749,7 +34600,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03023",
+      "id": "q03100",
       "text": "소방공무원으로서 필요한 덕목은 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -33760,7 +34611,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03024",
+      "id": "q03101",
       "text": "주취자·폭력 민원 등 구급 현장 상황 대처(구급 직렬 특화 단골 소재)",
       "category": "job",
       "region": null,
@@ -33771,7 +34622,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03025",
+      "id": "q03102",
       "text": "계리직(우체국) 지원동기는 무엇인가?",
       "category": "job",
       "region": null,
@@ -33782,7 +34633,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03026",
+      "id": "q03103",
       "text": "우체국을 이용해 본 경험이 있는가? 이용하며 느낀 개선점은?",
       "category": "job",
       "region": null,
@@ -33793,7 +34644,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03027",
+      "id": "q03104",
       "text": "계리직이 하는 업무에 대해 아는 대로 말해보라 (창구·회계·예금·보험)",
       "category": "job",
       "region": null,
@@ -33804,7 +34655,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03028",
+      "id": "q03105",
       "text": "창구에서 무리한 요구를 하는 악성 민원인(블랙컨슈머)을 어떻게 응대하겠는가?",
       "category": "job",
       "region": null,
@@ -33815,7 +34666,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03029",
+      "id": "q03106",
       "text": "업무가 밀려 있는데 민원인이 계속 항의하는 상황이라면?",
       "category": "job",
       "region": null,
@@ -33826,7 +34677,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03030",
+      "id": "q03107",
       "text": "우체국 예금·보험 상품에 대해 아는 것을 말해보라 (필기과목 예금일반·보험일반 연계)",
       "category": "job",
       "region": null,
@@ -33837,7 +34688,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03031",
+      "id": "q03108",
       "text": "우체국예금과 시중은행 예금의 차이는 무엇인가? (국가가 지급 보장)",
       "category": "job",
       "region": null,
@@ -33848,7 +34699,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03032",
+      "id": "q03109",
       "text": "우체국 서비스 개선·홍보 방안 등 우정사업 관련 주제 발표",
       "category": "job",
       "region": null,
@@ -33859,7 +34710,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03033",
+      "id": "q03110",
       "text": "국가정보자원관리원 화재로 우체국 금융(이용자 약 832만 명)·택배 시스템 마비, 추석 물류대란 우려",
       "category": "job",
       "region": null,
@@ -33870,7 +34721,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03034",
+      "id": "q03111",
       "text": "법원공무원이 나아가야 할 방향은 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -33881,7 +34732,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03035",
+      "id": "q03112",
       "text": "법원공무원의 올바른 인재상과 가장 중요한 덕목은?",
       "category": "job",
       "region": null,
@@ -33892,7 +34743,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03036",
+      "id": "q03113",
       "text": "이 사회에서 법원과 법원공무원의 역할은 무엇인가?",
       "category": "job",
       "region": null,
@@ -33903,7 +34754,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03037",
+      "id": "q03114",
       "text": "왜 민원인에게 친절해야 하는가? (거의 모든 수험생에게 주어지는 질문)",
       "category": "job",
       "region": null,
@@ -33914,7 +34765,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03038",
+      "id": "q03115",
       "text": "대체적 분쟁해결제도(ADR)에 대해 설명해보라",
       "category": "job",
       "region": null,
@@ -33925,7 +34776,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03039",
+      "id": "q03116",
       "text": "상속회복청구권이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -33936,7 +34787,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03040",
+      "id": "q03117",
       "text": "등기청구권이란 무엇인가? (등기직)",
       "category": "job",
       "region": null,
@@ -33947,7 +34798,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03041",
+      "id": "q03118",
       "text": "국민참여재판제도를 설명하고 미국 배심제와의 차이를 말해보라",
       "category": "job",
       "region": null,
@@ -33958,7 +34809,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03042",
+      "id": "q03119",
       "text": "파산과 면책의 개념을 설명해보라",
       "category": "job",
       "region": null,
@@ -33969,7 +34820,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03043",
+      "id": "q03120",
       "text": "변제자대위에 대해 설명해보라",
       "category": "job",
       "region": null,
@@ -33980,7 +34831,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03044",
+      "id": "q03121",
       "text": "전자소송에 대해 아는 대로 말해보라",
       "category": "job",
       "region": null,
@@ -33991,7 +34842,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03045",
+      "id": "q03122",
       "text": "국회사무처 지원동기는 무엇인가?",
       "category": "job",
       "region": null,
@@ -34002,7 +34853,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03046",
+      "id": "q03123",
       "text": "국회사무처의 업무와 역할에 대해 말해보라",
       "category": "job",
       "region": null,
@@ -34013,7 +34864,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03047",
+      "id": "q03124",
       "text": "입법부의 역할은 무엇인가? 입법부 공무원과 행정부 공무원의 차이는?",
       "category": "job",
       "region": null,
@@ -34024,7 +34875,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03048",
+      "id": "q03125",
       "text": "국정감사와 국정조사의 차이점은?",
       "category": "job",
       "region": null,
@@ -34035,7 +34886,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03049",
+      "id": "q03126",
       "text": "법률과 예산의 차이점은?",
       "category": "job",
       "region": null,
@@ -34046,7 +34897,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03050",
+      "id": "q03127",
       "text": "법률유보의 원칙이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -34057,7 +34908,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03051",
+      "id": "q03128",
       "text": "교섭단체란 무엇인가? 구성 요건은?",
       "category": "job",
       "region": null,
@@ -34068,7 +34919,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03052",
+      "id": "q03129",
       "text": "'원내(院內)'의 의미는 무엇인가?",
       "category": "job",
       "region": null,
@@ -34079,7 +34930,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03053",
+      "id": "q03130",
       "text": "불체포특권과 면책특권을 비교 설명해보라",
       "category": "job",
       "region": null,
@@ -34090,7 +34941,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03054",
+      "id": "q03131",
       "text": "국회 재적의원 3분의 2 이상 찬성으로 의결되는 사항은? (헌법개정안, 의원 제명, 대통령 탄핵소추 등)",
       "category": "job",
       "region": null,
@@ -34101,7 +34952,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03055",
+      "id": "q03132",
       "text": "국회의원 총원은? 의장·부의장은 몇 명인가?",
       "category": "job",
       "region": null,
@@ -34112,7 +34963,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03056",
+      "id": "q03133",
       "text": "현재 국회의 원내 정당과 각 당 대표의원(원내대표)을 말해보라",
       "category": "job",
       "region": null,
@@ -34123,7 +34974,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03057",
+      "id": "q03134",
       "text": "경찰청에서 하고 싶은 업무는 무엇인가? (복지·교육 등 행정 지원 업무 답변 사례)",
       "category": "job",
       "region": null,
@@ -34134,7 +34985,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03058",
+      "id": "q03135",
       "text": "업체와의 유착이 의심되는 상황에서 어떻게 대처하겠는가?",
       "category": "job",
       "region": null,
@@ -34145,7 +34996,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03059",
+      "id": "q03136",
       "text": "과거 경찰청 행정직이 대량 채용되지 않았던 이유는 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -34156,7 +35007,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03060",
+      "id": "q03137",
       "text": "경찰행정직렬에서 가장 중요한 점은 무엇인가?",
       "category": "job",
       "region": null,
@@ -34167,7 +35018,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03061",
+      "id": "q03138",
       "text": "관료제를 설명하고 장단점과 단점 극복 방안을 말해보라",
       "category": "job",
       "region": null,
@@ -34178,7 +35029,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03062",
+      "id": "q03139",
       "text": "자치경찰제에 대해 찬성하는가, 반대하는가? (※ 경찰공무원 면접 기출이나 경찰행정 대비에도 활용)",
       "category": "job",
       "region": null,
@@ -34189,7 +35040,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03063",
+      "id": "q03140",
       "text": "자치경찰제 운영 시 국가경찰 인원이 몇 명이나 자치경찰로 이동하는가?",
       "category": "job",
       "region": null,
@@ -34200,7 +35051,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03064",
+      "id": "q03141",
       "text": "수사권 독립(조정)으로 경찰이 얻는 가장 큰 이익은 무엇인가? (※ 경찰공무원 면접 기출)",
       "category": "job",
       "region": null,
@@ -34211,7 +35062,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03065",
+      "id": "q03142",
       "text": "경찰 조직(제복 조직) 문화에 일반직으로서 어떻게 적응하겠는가?",
       "category": "job",
       "region": null,
@@ -34222,7 +35073,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03066",
+      "id": "q03143",
       "text": "1분 자기소개를 해보라",
       "category": "job",
       "region": null,
@@ -34233,7 +35084,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03067",
+      "id": "q03144",
       "text": "군무원 지원동기는 무엇인가?",
       "category": "job",
       "region": null,
@@ -34244,7 +35095,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03068",
+      "id": "q03145",
       "text": "군인과 군무원의 차이는 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -34255,7 +35106,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03069",
+      "id": "q03146",
       "text": "일반 공무원과 군무원의 차이는 무엇인가?",
       "category": "job",
       "region": null,
@@ -34266,7 +35117,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03070",
+      "id": "q03147",
       "text": "원하지 않는 근무지(격오지 부대)에 배치된다면 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -34277,7 +35128,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03071",
+      "id": "q03148",
       "text": "상관의 부당한 업무지시에 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -34288,7 +35139,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03072",
+      "id": "q03149",
       "text": "본인의 성과를 상관이 가로챈다면 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -34299,7 +35150,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03073",
+      "id": "q03150",
       "text": "군무원 면직률(조기퇴직률)이 높은 이유가 무엇이라고 생각하는가?",
       "category": "job",
       "region": null,
@@ -34310,7 +35161,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03074",
+      "id": "q03151",
       "text": "본인이 생각하는 군무원의 장점은 무엇인가?",
       "category": "job",
       "region": null,
@@ -34321,7 +35172,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03075",
+      "id": "q03152",
       "text": "전공 관련 개념 질문 연속 출제 (예: 전산·통신·수사 등 직렬별 전공 지식 확인)",
       "category": "job",
       "region": null,
@@ -34332,7 +35183,7 @@
       "source_file": "data/04-jobs/특수채용-면접.md"
     },
     {
-      "id": "q03076",
+      "id": "q03153",
       "text": "환경직 공무원이 하는 일을 아는 대로 말해보라.",
       "category": "job",
       "region": null,
@@ -34343,7 +35194,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03077",
+      "id": "q03154",
       "text": "왜 환경직 공무원이 되려고 하는가? 전공(환경공학 등)을 행정에 어떻게 활용하겠는가?",
       "category": "job",
       "region": null,
@@ -34354,7 +35205,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03078",
+      "id": "q03155",
       "text": "우리 지역의 가장 큰 환경 문제는 무엇이라고 생각하며, 어떻게 해결하겠는가?",
       "category": "job",
       "region": null,
@@ -34365,7 +35216,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03079",
+      "id": "q03156",
       "text": "우리 지역(지자체)의 환경 정책·사업 중 아는 것을 말해보라. (예: 탄소중립 지원센터, 1회용품 줄이기 조례)",
       "category": "job",
       "region": null,
@@ -34376,7 +35227,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03080",
+      "id": "q03157",
       "text": "환경 규제와 지역경제(기업 활동)가 충돌할 때 어떤 기준으로 판단해야 하는가?",
       "category": "job",
       "region": null,
@@ -34387,7 +35238,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03081",
+      "id": "q03158",
       "text": "환경보전과 개발의 조화(지속가능발전)에 대한 견해를 말해보라.",
       "category": "job",
       "region": null,
@@ -34398,7 +35249,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03082",
+      "id": "q03159",
       "text": "환경영향평가란 무엇인가? 전략환경영향평가·소규모 환경영향평가와의 차이는?",
       "category": "job",
       "region": null,
@@ -34409,7 +35260,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03083",
+      "id": "q03160",
       "text": "환경기준과 배출허용기준의 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34420,7 +35271,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03084",
+      "id": "q03161",
       "text": "배출부과금(기본부과금·초과부과금) 제도를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34431,7 +35282,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03085",
+      "id": "q03162",
       "text": "통합환경관리제도(통합허가)란 무엇인가? (환경오염시설의 통합관리에 관한 법률)",
       "category": "job",
       "region": null,
@@ -34442,7 +35293,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03086",
+      "id": "q03163",
       "text": "오염자부담원칙(PPP)이란 무엇인가?",
       "category": "job",
       "region": null,
@@ -34453,7 +35304,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03087",
+      "id": "q03164",
       "text": "환경 분야에서 ESG가 왜 중요한가? 지자체 차원의 ESG 행정이란?",
       "category": "job",
       "region": null,
@@ -34464,7 +35315,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03088",
+      "id": "q03165",
       "text": "미세먼지(PM10)와 초미세먼지(PM2.5)의 차이와 발생 원인을 설명해보라.",
       "category": "job",
       "region": null,
@@ -34475,7 +35326,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03089",
+      "id": "q03166",
       "text": "미세먼지 저감을 위한 정책을 아는 대로 말해보라. (계절관리제, 비상저감조치, 노후 경유차 조기폐차)",
       "category": "job",
       "region": null,
@@ -34486,7 +35337,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03090",
+      "id": "q03167",
       "text": "미세먼지 계절관리제란 무엇인가? 시행 시기(12~3월)와 주요 조치는?",
       "category": "job",
       "region": null,
@@ -34497,7 +35348,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03091",
+      "id": "q03168",
       "text": "고농도 미세먼지 비상저감조치 발령 시 지자체가 하는 일은? (차량 2부제, 사업장 조정, 살수차)",
       "category": "job",
       "region": null,
@@ -34508,7 +35359,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03092",
+      "id": "q03169",
       "text": "미세먼지 예보 등급(좋음-보통-나쁨-매우나쁨)과 주의보·경보 발령 기준을 아는가?",
       "category": "job",
       "region": null,
@@ -34519,7 +35370,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03093",
+      "id": "q03170",
       "text": "비산먼지 발생사업장(건설공사장) 관리 방법을 설명해보라. (방진막, 세륜시설, 살수)",
       "category": "job",
       "region": null,
@@ -34530,7 +35381,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03094",
+      "id": "q03171",
       "text": "대기오염물질 배출시설의 인허가 절차와 지도점검 시 확인 사항을 설명해보라.",
       "category": "job",
       "region": null,
@@ -34541,7 +35392,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03095",
+      "id": "q03172",
       "text": "TMS(굴뚝자동측정기기)란 무엇인가?",
       "category": "job",
       "region": null,
@@ -34552,7 +35403,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03096",
+      "id": "q03173",
       "text": "오존 경보제에 대해 설명해보라. 오존은 왜 여름 오후에 높아지는가?",
       "category": "job",
       "region": null,
@@ -34563,7 +35414,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03097",
+      "id": "q03174",
       "text": "탄소중립이란 무엇인가? 우리나라의 목표(2050 탄소중립, 2030 NDC 40% 감축)를 아는가?",
       "category": "job",
       "region": null,
@@ -34574,7 +35425,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03098",
+      "id": "q03175",
       "text": "탄소중립·녹색성장 기본법에 따라 지자체가 해야 할 일은? (탄소중립 기본계획, 탄소중립지원센터)",
       "category": "job",
       "region": null,
@@ -34585,7 +35436,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03099",
+      "id": "q03176",
       "text": "온실가스 배출권거래제란 무엇인가?",
       "category": "job",
       "region": null,
@@ -34596,7 +35447,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03100",
+      "id": "q03177",
       "text": "지구온난화의 원인 물질(6대 온실가스)을 말해보라.",
       "category": "job",
       "region": null,
@@ -34607,7 +35458,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03101",
+      "id": "q03178",
       "text": "RE100과 CF100의 차이를 아는가?",
       "category": "job",
       "region": null,
@@ -34618,7 +35469,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03102",
+      "id": "q03179",
       "text": "기후위기 적응 대책(폭염, 홍수, 가뭄)에 대해 지자체가 준비할 것은?",
       "category": "job",
       "region": null,
@@ -34629,7 +35480,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03103",
+      "id": "q03180",
       "text": "전기차·수소차 보급 정책과 충전 인프라 확충 방안에 대해 말해보라.",
       "category": "job",
       "region": null,
@@ -34640,7 +35491,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03104",
+      "id": "q03181",
       "text": "무공해차(저공휘발차) 구매보조금 업무를 아는가?",
       "category": "job",
       "region": null,
@@ -34651,7 +35502,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03105",
+      "id": "q03182",
       "text": "폐기물의 분류(생활폐기물, 사업장폐기물, 지정폐기물, 건설폐기물)를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34662,7 +35513,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03106",
+      "id": "q03183",
       "text": "폐기물 관리의 우선순위(발생억제→재사용→재활용→에너지회수→처분)를 말해보라.",
       "category": "job",
       "region": null,
@@ -34673,7 +35524,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03107",
+      "id": "q03184",
       "text": "쓰레기 종량제의 원리와 효과를 설명해보라. (배출자부담원칙)",
       "category": "job",
       "region": null,
@@ -34684,7 +35535,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03108",
+      "id": "q03185",
       "text": "재활용 분리배출 요령과 분리배출 표시제도를 설명해보라. 재활용이 안 되는 품목의 예는?",
       "category": "job",
       "region": null,
@@ -34695,7 +35546,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03109",
+      "id": "q03186",
       "text": "투명 페트병 별도 분리배출 제도를 아는가?",
       "category": "job",
       "region": null,
@@ -34706,7 +35557,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03110",
+      "id": "q03187",
       "text": "생산자책임재활용제도(EPR)란 무엇인가?",
       "category": "job",
       "region": null,
@@ -34717,7 +35568,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03111",
+      "id": "q03188",
       "text": "순환경제(자원순환)란 무엇인가? 순환자원 인정제도를 아는가?",
       "category": "job",
       "region": null,
@@ -34728,7 +35579,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03112",
+      "id": "q03189",
       "text": "1회용품 규제(카페 1회용컵, 비닐봉투) 정책 현황과 견해를 말해보라.",
       "category": "job",
       "region": null,
@@ -34739,7 +35590,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03113",
+      "id": "q03190",
       "text": "음식물쓰레기 줄이기 방안과 처리 방식(사료화·퇴비화·바이오가스)을 말해보라.",
       "category": "job",
       "region": null,
@@ -34750,7 +35601,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03114",
+      "id": "q03191",
       "text": "불법투기 단속은 어떻게 하는가? (CCTV, 종량제봉투 미사용, 신고포상금)",
       "category": "job",
       "region": null,
@@ -34761,7 +35612,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03115",
+      "id": "q03192",
       "text": "폐기물처리업 허가 절차와 지도점검 사항을 아는가?",
       "category": "job",
       "region": null,
@@ -34772,7 +35623,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03116",
+      "id": "q03193",
       "text": "방치폐기물·불법 방치 사업장 문제는 어떻게 처리하는가?",
       "category": "job",
       "region": null,
@@ -34783,7 +35634,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03117",
+      "id": "q03194",
       "text": "매립지 부족 문제(수도권매립지 등)와 소각시설 신설 갈등을 어떻게 풀어야 하는가?",
       "category": "job",
       "region": null,
@@ -34794,7 +35645,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03118",
+      "id": "q03195",
       "text": "플라스틱 오염 문제(국제 플라스틱 협약 논의)에 대한 견해는?",
       "category": "job",
       "region": null,
@@ -34805,7 +35656,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03119",
+      "id": "q03196",
       "text": "폐배터리·태양광 폐패널 등 미래 폐기물 대책을 아는가?",
       "category": "job",
       "region": null,
@@ -34816,7 +35667,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03120",
+      "id": "q03197",
       "text": "물환경보전법상 폐수배출시설 인허가와 배출허용기준 초과 시 조치를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34827,7 +35678,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03121",
+      "id": "q03198",
       "text": "BOD, COD, TOC의 개념과 차이를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34838,7 +35689,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03122",
+      "id": "q03199",
       "text": "수질오염의 지표에는 어떤 것이 있는가? (DO, SS, 대장균군 등)",
       "category": "job",
       "region": null,
@@ -34849,7 +35700,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03123",
+      "id": "q03200",
       "text": "점오염원과 비점오염원의 차이는? 비점오염원 관리 방안은?",
       "category": "job",
       "region": null,
@@ -34860,7 +35711,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03124",
+      "id": "q03201",
       "text": "녹조(조류 대발생)의 원인과 대책을 설명해보라. (부영양화, 총인 관리)",
       "category": "job",
       "region": null,
@@ -34871,7 +35722,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03125",
+      "id": "q03202",
       "text": "조류경보제 단계를 아는가?",
       "category": "job",
       "region": null,
@@ -34882,7 +35733,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03126",
+      "id": "q03203",
       "text": "하수처리 과정(물리적→생물학적→고도처리)을 간단히 설명해보라.",
       "category": "job",
       "region": null,
@@ -34893,7 +35744,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03127",
+      "id": "q03204",
       "text": "개인하수처리시설(정화조) 관리 업무를 아는가? (내부청소, 방류수 수질검사)",
       "category": "job",
       "region": null,
@@ -34904,7 +35755,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03128",
+      "id": "q03205",
       "text": "가축분뇨 배출시설 관리와 가축분뇨 무단 방류 시 조치를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34915,7 +35766,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03129",
+      "id": "q03206",
       "text": "물 재이용(중수도, 하수 재이용)에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -34926,7 +35777,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03130",
+      "id": "q03207",
       "text": "지하수 오염 방지 대책은?",
       "category": "job",
       "region": null,
@@ -34937,7 +35788,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03131",
+      "id": "q03208",
       "text": "토양오염 우려기준·대책기준, 토양정밀조사에 대해 아는가? (주유소 누유 등)",
       "category": "job",
       "region": null,
@@ -34948,7 +35799,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03132",
+      "id": "q03209",
       "text": "먹는물 수질기준 항목 몇 가지를 말해보라.",
       "category": "job",
       "region": null,
@@ -34959,7 +35810,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03133",
+      "id": "q03210",
       "text": "층간소음 민원이 접수되면 어떻게 처리하는가? (이웃사이센터, 조정 절차)",
       "category": "job",
       "region": null,
@@ -34970,7 +35821,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03134",
+      "id": "q03211",
       "text": "공사장 소음 규제 기준과 단속 절차를 설명해보라.",
       "category": "job",
       "region": null,
@@ -34981,7 +35832,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03135",
+      "id": "q03212",
       "text": "악취 민원(축사, 음식점, 하수구) 처리 절차와 악취 측정 방법을 아는가?",
       "category": "job",
       "region": null,
@@ -34992,7 +35843,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03136",
+      "id": "q03213",
       "text": "석면의 위해성과 석면 해체·제거 작업 관리 방법을 설명해보라.",
       "category": "job",
       "region": null,
@@ -35003,7 +35854,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03137",
+      "id": "q03214",
       "text": "빛공해(인공조명)에 대해 아는가?",
       "category": "job",
       "region": null,
@@ -35014,7 +35865,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03138",
+      "id": "q03215",
       "text": "야생동물(멧돼지, 고라니, 비둘기) 관련 민원은 어떻게 처리하는가?",
       "category": "job",
       "region": null,
@@ -35025,7 +35876,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03139",
+      "id": "q03216",
       "text": "생태계교란 생물(가시박, 뉴트리아, 붉은귀거북)의 예를 들어보라.",
       "category": "job",
       "region": null,
@@ -35036,7 +35887,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03140",
+      "id": "q03217",
       "text": "국립공원·습지보호지역 등 보호지역 제도를 아는가?",
       "category": "job",
       "region": null,
@@ -35047,7 +35898,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03141",
+      "id": "q03218",
       "text": "로드킬 저감 대책은?",
       "category": "job",
       "region": null,
@@ -35058,7 +35909,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03142",
+      "id": "q03219",
       "text": "라돈에 대해 설명해보라.",
       "category": "job",
       "region": null,
@@ -35069,7 +35920,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03143",
+      "id": "q03220",
       "text": "야간에 공장이 폐수를 하천에 무단 방류한다는 제보가 들어왔다. 어떻게 대응하겠는가? (증거 확보, 시료 채취, 처분·고발)",
       "category": "job",
       "region": null,
@@ -35080,7 +35931,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03144",
+      "id": "q03221",
       "text": "지도점검 중 배출허용기준 초과가 확인됐는데, 업체 사장이 \"영세업체라 개선 비용이 없다, 봐달라\"고 호소한다. 어떻게 처리하겠는가?",
       "category": "job",
       "region": null,
@@ -35091,7 +35942,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03145",
+      "id": "q03222",
       "text": "단속 나간 사업장에서 업주가 문을 잠그고 출입을 거부한다. 어떻게 하겠는가? (출입·검사 권한, 과태료)",
       "category": "job",
       "region": null,
@@ -35102,7 +35953,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03146",
+      "id": "q03223",
       "text": "점검 후 업체가 식사·선물(금품)을 제공하려 한다. 어떻게 대응하겠는가? (청렴)",
       "category": "job",
       "region": null,
@@ -35113,7 +35964,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03147",
+      "id": "q03224",
       "text": "상사가 지역 유력 기업의 위반 사항을 \"이번 한 번은 눈감아 주라\"고 지시한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -35124,7 +35975,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03148",
+      "id": "q03225",
       "text": "쓰레기 상습 불법투기 지역에 대한 민원이 반복된다. 단속과 예방을 어떻게 하겠는가? (CCTV, 봉투 뒤져 배출자 추적, 포상금)",
       "category": "job",
       "region": null,
@@ -35135,7 +35986,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03149",
+      "id": "q03226",
       "text": "농촌 지역에서 영농폐기물(폐비닐)과 쓰레기 불법 소각이 만연하다. 어떻게 개선하겠는가?",
       "category": "job",
       "region": null,
@@ -35146,7 +35997,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03150",
+      "id": "q03227",
       "text": "공사장 소음 민원이 폭주하는데, 측정해 보니 기준 이내다. 민원인은 계속 항의한다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -35157,7 +36008,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03151",
+      "id": "q03228",
       "text": "축사 악취 민원으로 주민과 축산 농가가 극심하게 대립한다. 담당자로서 어떻게 중재하겠는가?",
       "category": "job",
       "region": null,
@@ -35168,7 +36019,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03152",
+      "id": "q03229",
       "text": "관내에 소각장(자원회수시설) 신설이 추진되자 주민들이 결사 반대한다(님비). 어떻게 갈등을 관리하겠는가?",
       "category": "job",
       "region": null,
@@ -35179,7 +36030,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03153",
+      "id": "q03230",
       "text": "고농도 미세먼지 비상저감조치가 발령됐는데 관내 사업장들이 조치를 이행하지 않는다. 어떻게 하겠는가?",
       "category": "job",
       "region": null,
@@ -35190,7 +36041,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03154",
+      "id": "q03231",
       "text": "노후 경유차 운행제한 단속에 걸린 생계형 화물차주가 강하게 반발한다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -35201,7 +36052,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03155",
+      "id": "q03232",
       "text": "하천에서 물고기 집단 폐사가 발견됐다는 신고가 들어왔다. 초동 대응을 설명해보라.",
       "category": "job",
       "region": null,
@@ -35212,7 +36063,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03156",
+      "id": "q03233",
       "text": "여름철 상수원에서 녹조가 대량 발생했다. 어떤 조치를 하겠는가?",
       "category": "job",
       "region": null,
@@ -35223,7 +36074,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03157",
+      "id": "q03234",
       "text": "폭우로 관내 매립장·하수처리장이 침수될 위험이 있다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -35234,7 +36085,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03158",
+      "id": "q03235",
       "text": "재활용 선별장 화재가 발생해 주민 불안이 커졌다. 어떻게 수습하고 재발을 방지하겠는가?",
       "category": "job",
       "region": null,
@@ -35245,7 +36096,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03159",
+      "id": "q03236",
       "text": "1회용품 규제 계도 중 소상공인이 \"장사도 안 되는데 단속이냐\"며 항의한다. 어떻게 설득하겠는가?",
       "category": "job",
       "region": null,
@@ -35256,7 +36107,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03160",
+      "id": "q03237",
       "text": "전기차 보조금 신청이 폭주해 예산이 조기 소진됐는데 민원인이 형평성 문제를 제기한다. 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -35267,7 +36118,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03161",
+      "id": "q03238",
       "text": "환경단체가 지자체의 개발사업이 환경을 파괴한다며 기자회견을 열고 자료 공개를 요구한다. 담당자로서 어떻게 대응하겠는가?",
       "category": "job",
       "region": null,
@@ -35278,7 +36129,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03162",
+      "id": "q03239",
       "text": "무허가 폐기물 처리업자가 임야에 폐기물을 대량 방치하고 잠적했다. 어떻게 처리하겠는가? (행정대집행, 원상복구 명령)",
       "category": "job",
       "region": null,
@@ -35289,7 +36140,7 @@
       "source_file": "data/04-jobs/환경직.md"
     },
     {
-      "id": "q03163",
+      "id": "q03240",
       "text": "야간·새벽 단속과 잦은 현장 출장으로 체력적으로 힘들다. 어떻게 극복하겠는가?",
       "category": "job",
       "region": null,
