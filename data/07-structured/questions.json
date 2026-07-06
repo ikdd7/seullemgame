@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "korean-civil-service-interview-questions",
-    "generated_at": "2026-07-05T16:41:45+00:00",
+    "generated_at": "2026-07-06T05:20:47+00:00",
     "generator": "scripts/build_dataset.py",
     "source_dirs": [
       "02-common",
@@ -95,8 +95,20 @@
         "questions": 0
       },
       {
+        "file": "data/03-regions/군단위-강원.md",
+        "questions": 0
+      },
+      {
         "file": "data/03-regions/군단위-대표지역.md",
         "questions": 1
+      },
+      {
+        "file": "data/03-regions/군단위-충남경상.md",
+        "questions": 0
+      },
+      {
+        "file": "data/03-regions/군단위-호남.md",
+        "questions": 0
       },
       {
         "file": "data/03-regions/대구광역시.md",
