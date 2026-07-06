@@ -669,3 +669,101 @@ print(session_result["final_grade"])   # 종합 등급
 
 어댑터 2개(`_build_scoring_items`, `_committee_ids_for`)는 **데이터 형태 변환**이라 Mock↔실제
 교체와 무관하게 유지된다(단, 실제 STT 답변도 동일하게 qid별 스레드로 묶이면 그대로 동작).
+
+
+---
+
+# 실제 Claude API 어댑터 (llm_client.py)
+
+프로토타입의 Mock 백엔드를 **실제 Claude(Anthropic API)** 로 교체하는 어댑터. 원본 4개 모듈은
+한 줄도 수정하지 않고, 각 모듈이 요구하는 인터페이스를 그대로 구현한 클라이언트를 주입한다.
+
+- `AnthropicInterviewerClient` — 면접관 발화·꼬리질문 생성 (`session_engine.LLMClient` 프로토콜 구현).
+  페르소나 시스템 프롬프트(면접관-페르소나-세트.md §1) + 하드 가드레일(§5) + 지자체/직렬 컨텍스트 주입.
+  경량 트리거 판정 `detect_trigger()`(§3)도 제공 — `session_engine`의 키워드 휴리스틱 대체.
+- `AnthropicScorerClient` — 채점 (`scorer.LLMClient` 인터페이스 구현).
+  채점-프롬프트-실장.md §1 System/User 프롬프트 + §1-4 JSON 스키마(structured outputs) + §1-3 위원 페르소나.
+  red flag 2차 판정 `detect_red_flags()`(§3)도 제공.
+
+## L-1. 환경변수 설정
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."     # 실제 호출에만 필요(드라이런은 불필요)
+pip install anthropic                       # SDK. 미설치 시 import/조립/드라이런은 되고, 실제 호출만 막힌다
+```
+
+- 키가 없으면 **실제 호출 시점**에 한국어 에러(`환경변수 ANTHROPIC_API_KEY 가 설정되어 있지 않습니다 …`).
+- `anthropic` 미설치면 실제 호출 시점에 `pip install anthropic` 안내 에러. import·인스턴스화는 정상.
+
+## L-2. 역할별 모델 매핑 (정확 모델 ID)
+
+| 역할 | 모델 ID | 선택 이유 |
+|---|---|---|
+| 면접관 대화 | `claude-sonnet-5` | 수십 턴의 짧은 페르소나 발화를 낮은 지연·비용으로 자연스럽게 |
+| 트리거/경량 판정 | `claude-haiku-4-5-20251001` | 답변당 1회 도는 이진 트리거 탐지 — 속도·저비용 우선 |
+| 채점 앙상블 | `claude-opus-4-8` | 합격/미흡 임계 판정. reasoning→verdict 최상위 판단력, 위원 N회 호출 |
+
+현행 모델 API 제약(claude-api 스킬 반영):
+- `claude-sonnet-5`·`claude-opus-4-8` 은 `temperature`/`top_p`/`top_k` 를 받지 않는다(400).
+  설계 문서의 "채점 temp 0.0~0.2 / 꼬리질문 temp 0.3" 권장은 **프롬프트 지시로 대체**한다.
+  `temperature`(=0.0)는 sampling 을 허용하는 `claude-haiku-4-5-20251001`(경량 판정)에만 적용.
+- `thinking`: 채점=adaptive(추론 품질), 면접 발화=disabled(짧아서 불필요), Haiku=미지정.
+- 프롬프트 캐싱: `system` 프리픽스(가드레일+컨텍스트 / 루브릭+few-shot)에 `cache_control:{ephemeral}`.
+  세션 내 동결되는 프리픽스를 캐시하고, 턴별로 바뀌는 페르소나/질문·답변은 그 뒤에 배치.
+
+## L-3. 드라이런 실행
+
+실제 호출 대신 **조립된 프롬프트(모델·파라미터·system·user)** 를 출력한다. 키·SDK 없이 동작한다.
+
+```bash
+python3 llm_client.py             # 드라이런(기본): 면접관 3종 + 트리거 + 채점 + red flag 프롬프트 조립 출력
+python3 llm_client.py --live      # 실제 API 호출(anthropic 설치 + ANTHROPIC_API_KEY 필요)
+```
+
+프로그램 임포트로 프롬프트만 조립해 보기:
+
+```python
+import llm_client as lc
+itv = lc.AnthropicInterviewerClient(dry_run=True)
+print(itv.interviewer_turn("main", persona="표준형", context=ctx, question=q))  # 조립 프롬프트 문자열
+req = itv.build_turn("followup", persona="압박형", context=ctx, trigger="T1", snippet="유연하게 적용", depth=1)
+print(lc.render_request(req))   # {model, max_tokens, params, system[], messages[]} 렌더
+```
+
+## L-4. Mock → 실제 교체 방법
+
+**세션 엔진 코드·채점 코드 무수정.** 주입 인자만 바꾼다.
+
+```python
+# 1) 면접관: MockLLMClient → AnthropicInterviewerClient
+import llm_client as lc, session_engine as se
+engine = se.SessionEngine(region="대구광역시", job="일반행정직",
+                          llm=lc.AnthropicInterviewerClient())      # ← 이 한 줄만 교체
+engine.run()
+
+# 2) 채점: MockScorer → AnthropicScorerClient (위원별 1인 주입)
+import scorer as sc
+client = lc.AnthropicScorerClient(committee_id="J-STR")
+result = sc.score_answer(question, answer, client=client, question_type="상황형")
+# score_session 은 committee_id 별로 AnthropicScorerClient 를 만들어 score_answer(..., client=) 에 주입.
+# 앙상블 집계 aggregate_verdicts 는 결정적 코드라 그대로 재사용(교체 불필요).
+
+# 3) (옵션) 꼬리질문 트리거: 키워드 휴리스틱 detect_trigger → LLM 경량 판정
+trig, snippet = lc.AnthropicInterviewerClient().detect_trigger(answer, qtype="공직가치", difficulty="실전")
+```
+
+- `demo_pipeline.py`에서는 `se.SessionEngine(..., llm=...)` 과 `score_session` 의 `client` 경로만
+  실제 클라이언트로 바꾸면 그대로 실서비스 파이프라인이 된다(D-6 교체 포인트와 동일).
+- `AnthropicScorerClient`는 `MockScorer`와 동일한 `committee_id`(J-STD/J-STR/J-JOB)와 `score(...)`
+  시그니처를 갖는다 → `scorer.LLMClient` 드롭인.
+
+## L-5. 검증 결과 (드라이런)
+
+- `python3 llm_client.py` — 면접관 intro/main/followup(3종) + 경량 트리거(Haiku) + 채점(Opus,
+  §1-4 스키마) + red flag(Haiku, §3) **6개 프롬프트가 모델·파라미터·캐시 경계까지 정확히 조립**됨을 확인.
+- 모델 매핑: 발화=`claude-sonnet-5`(thinking disabled) / 트리거·red flag=`claude-haiku-4-5-20251001`
+  (temperature 0.0 + JSON 스키마) / 채점=`claude-opus-4-8`(adaptive thinking + §1-4 structured outputs).
+- 인터페이스 호환: `scorer.score_answer(..., client=AnthropicScorerClient(dry_run=True))` 정상 동작,
+  `session_engine.LLMClient.interviewer_turn` 시그니처 일치.
+- 안전장치: `anthropic` 미설치·`ANTHROPIC_API_KEY` 미설정 상태에서 import·조립·드라이런 완주,
+  실제 호출 경로만 명확한 한국어 `RuntimeError`.
