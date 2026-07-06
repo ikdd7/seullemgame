@@ -217,19 +217,29 @@ def infer_type_from_context(*contexts: str):
     return None
 
 
-CITY_HEADING_RE = re.compile(r"^([가-힣]{1,8}(시|군|구))\b")
+# H2 제목에서 "1. 천안시 (충남)" → "천안시" 형태로 시·군·구명 추출
+CITY_HEADING_RE = re.compile(r"([가-힣]{2,8}(?:특별자치시|특별자치도|광역시|특별시|시|군|구))")
+
+# 파일명 자체가 행정구역이 아니라 수집 배치 라벨인 파일들
+# → 지역값은 파일명이 아니라 H2 제목의 실제 시·군·구명에서 뽑는다.
+BATCH_STEM_RE = re.compile(
+    r"(주요시군|잔여시군|3차시군|추가시군|중소시군|군단위|자치구)"
+)
 
 
 def region_from_filename(stem: str, current_h2: str):
+    is_batch = bool(BATCH_STEM_RE.search(stem))
     if stem == "경기도-주요시군":
         base = "경기도"
-    elif stem == "비수도권-주요시군":
-        base = None
+    elif is_batch:
+        base = None  # 배치 파일은 파일명을 지역값으로 쓰지 않음
     else:
-        base = stem
-    # 주요시군 파일은 H2 제목(수원시, 천안시 …)이 더 구체적
-    if stem.endswith("주요시군") and current_h2:
-        m = CITY_HEADING_RE.match(strip_markdown(current_h2))
+        # "서울특별시-심화", "부산광역시-2차" 등 접미사를 벗겨 본 지역명으로
+        base = re.sub(r"-(심화|\d+차|상세|보강).*$", "", stem)
+        base = REGION_NORMALIZE.get(base, base)
+    # 배치 파일은 H2 제목(수원시, 천안시, 강남구 …)이 실제 지역
+    if is_batch and current_h2:
+        m = CITY_HEADING_RE.search(strip_markdown(current_h2))
         if m:
             return m.group(1)
     return base
