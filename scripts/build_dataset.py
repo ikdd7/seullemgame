@@ -92,6 +92,8 @@ YEAR_RE = re.compile(r"(19|20)\d{2}")
 # ---------------------------------------------------------------- 라인 판별
 
 BULLET_RE = re.compile(r"^\s*[-*]\s+(.*)$")
+# 번호 목록(1. / 2) …)도 질문 항목으로 인식 — 군 단위·심화 파일이 번호 목록을 씀
+NUMBERED_RE = re.compile(r"^\s*\d{1,3}[.)]\s+(.*)$")
 CHECKBOX_RE = re.compile(r"^\s*[-*]\s+\[[ xX]\]\s")
 LEADING_TAG_RE = re.compile(r"^\[([^\[\]]{1,60})\]\s*")
 TRAILING_TAG_RE = re.compile(r"\s*\[([^\[\]]{1,40})\]\s*$")
@@ -297,7 +299,11 @@ def extract_from_file(path: Path, category: str):
         if in_source_section:
             continue
         mb = BULLET_RE.match(line)
-        if not mb or CHECKBOX_RE.match(line):
+        if mb and CHECKBOX_RE.match(line):
+            continue
+        if not mb:
+            mb = NUMBERED_RE.match(line)
+        if not mb:
             continue
 
         body = mb.group(1).strip()
@@ -382,6 +388,9 @@ def extract_from_file(path: Path, category: str):
             if mh:
                 job = mh.group(1)
         qtype = tag_type or infer_type_from_context(current_section, current_h2) or file_type
+        # 지역 파일에서 유형이 안 잡히면 대개 지역현안 질문(시·군 현안 특화)
+        if qtype is None and category == "region":
+            qtype = "지역현안"
 
         questions.append(
             {
